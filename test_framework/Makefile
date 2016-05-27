@@ -1,13 +1,24 @@
+.PHONY: venv install install-dev test flake8 requirements clean
+
 venv:
 	virtualenv venv --python=python3
+	. venv/bin/activate && pip install pip==8.1.1  # Pin pip to pip-tools required version
 
-requirements-compile:
-	pip-compile -v --output-file requirements/base.txt requirements/base.in
-	pip-compile -v --output-file requirements/django-1.9.txt requirements/django-1.9.in
-
-requirements:
+install:
 	pip install -r requirements/django-1.9.txt
 	pip install -e ..
 
+install-dev: install
+	pip install -r requirements/dev.txt
+
 test:
 	cd django_1_9 && ./manage.py test
+
+flake8:
+	flake8 ../factory_djoy
+
+requirements:
+	+$(MAKE) -C requirements all
+
+clean:
+	rm -rf venv
