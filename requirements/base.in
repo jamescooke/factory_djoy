@@ -1,0 +1,3 @@
+flake8
+pip-tools
+twine
