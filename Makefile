@@ -12,6 +12,7 @@ test:
 
 lint:
 	flake8 factory_djoy
+	flake8 tests
 
 sdist:
 	python setup.py sdist
