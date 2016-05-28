@@ -1,6 +1,12 @@
-*.egg-info
+# Python things
 *.pyc
-.tox/
-dist/
 __pycache__/
 venv/
+
+# Building things
+*.egg-info
+.tox/
+dist/
+
+# Django local development can create sqlite files
+db.sqlite3
