@@ -1,4 +1,4 @@
-.PHONY: install test sdist testsdist upload clean
+.PHONY: install test lint sdist register upload clean
 
 install:
 	pip install -r requirements/base.txt
@@ -6,11 +6,11 @@ install:
 test:
 	tox
 
+lint:
+	flake8 factory_djoy
+
 sdist:
 	python setup.py sdist
-
-testsdist: sdist
-	pip install dist/factory_djoy-*.tar.gz
 
 register:
 	twine register
