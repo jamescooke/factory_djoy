@@ -41,3 +41,15 @@ folder.
 On change, they can all be built with ``make``::
 
     make requirements
+
+Upload to PyPI
+--------------
+
+The distribution can be created and installed in the active environment (to
+test that all files are provided and linked correctly) with::
+
+    make testsdist
+
+Once complete, that can be uploaded to PyPI with::
+
+    make upload
