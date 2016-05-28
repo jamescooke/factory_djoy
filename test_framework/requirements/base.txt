@@ -5,8 +5,21 @@
 #    pip-compile --output-file base.txt base.in
 #
 
+backports.shutil-get-terminal-size==1.0.0  # via ipython
 click==6.6                # via pip-tools
+decorator==4.0.9          # via ipython, traitlets
 django==1.9.6
 first==2.0.1              # via pip-tools
+ipython-genutils==0.1.0   # via traitlets
+ipython==4.2.0
+pexpect==4.1.0            # via ipython
+pickleshare==0.7.2        # via ipython
 pip-tools==1.6.5
+ptyprocess==0.5.1         # via pexpect
+simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via pip-tools
+traitlets==4.2.1          # via ipython
+
+# The following packages are commented out because they are
+# considered to be unsafe in a requirements file:
+# setuptools                # via ipython
