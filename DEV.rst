@@ -36,12 +36,32 @@ Circle will also run linting before the main test run::
     make lint
 
 
+Working locally
+---------------
+
+If there are multiple tests to run this can become inefficient with ``tox``.
+Therefore, you can use the local environment configured inside
+``test_framework``.
+
+Create a virtual environment and install the requirements::
+
+    cd test_framework
+    make venv
+    . venv/bin/activate
+    make install
+
+Change directory to a target Django project and run the tests manually::
+
+    cd django_1_9
+    ./manage.py test
+
+
 Helpers
 -------
 
 The ``Makefile`` has a couple of helper recipes:
 
 * ``sdist``: Creates the distribution.
-* ``register``: Use ``twine`` to register with PyPI.
 * ``upload``: Push generated distribution to PyPI.
+* ``requirements``: User ``pip-compile`` to compile all requirements.
 * ``clean``: Remove all compiled Python files, distributions, etc.
