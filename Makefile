@@ -1,7 +1,8 @@
-.PHONY: venv install test lint sdist register upload clean
+.PHONY: venv install test lint sdist upload requirements clean
 
 venv:
-	virtualenv venv --python=python3
+	virtualenv venv --python=python3.5
+	. venv/bin/activate && pip install pip==8.1.1  # Pin pip to pip-tools required version
 
 install:
 	pip install -r requirements/base.txt
@@ -15,11 +16,11 @@ lint:
 sdist:
 	python setup.py sdist
 
-register:
-	twine register
-
 upload:
 	twine upload dist/factory_djoy-*.tar.gz
+
+requirements:
+	$(MAKE) -C requirements
 
 clean:
 	python setup.py clean
