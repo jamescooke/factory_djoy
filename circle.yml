@@ -1,14 +1,11 @@
-machine:
-  python:
-    version: 3.4.3
-
 dependencies:
   override:
     - make install
+    - pip install tox-pyenv
+    - pyenv local 2.7.10 3.4.3 3.5.0
 
 test:
+  pre:
+    - make lint
   override:
     - make test
-  post:
-    - flake8 factory_djoy
-    - make testsdist

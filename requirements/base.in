@@ -1,0 +1,4 @@
+flake8
+pip-tools
+tox
+twine
