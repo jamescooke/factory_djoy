@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from factory import Sequence, PostGenerationMethodCall, SubFactory
+from factory import Sequence, PostGenerationMethodCall
 from factory.django import DjangoModelFactory
 
 
