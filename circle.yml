@@ -4,10 +4,11 @@ machine:
 
 dependencies:
   override:
-    - cd test_framework && make install
+    - make install
 
 test:
   override:
-    - cd test_framework && make test
+    - make test
   post:
     - flake8 factory_djoy
+    - make testsdist
