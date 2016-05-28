@@ -1,2 +1,0 @@
-factory_boy
-django>=1.9,<1.10
