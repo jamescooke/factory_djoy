@@ -1,4 +1,7 @@
-.PHONY: install test lint sdist register upload clean
+.PHONY: venv install test lint sdist register upload clean
+
+venv:
+	virtualenv venv --python=python3
 
 install:
 	pip install -r requirements/base.txt
