@@ -4,7 +4,7 @@ install:
 	pip install -r requirements/base.txt
 
 test:
-	$(MAKE) -C test_framework test
+	tox
 
 sdist:
 	python setup.py sdist
@@ -20,5 +20,6 @@ upload:
 
 clean:
 	python setup.py clean
-	rm -r dist
+	-rm -r dist
+	-rm -r .tox
 	find . -name '*.pyc' -delete
