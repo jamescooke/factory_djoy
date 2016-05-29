@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='factory_djoy',
-    version='0.1',
+    version='0.2',
 
     description="Wrappers over Factory Boy's Django Factories",
     url='http://github.com/jamescooke/factory_djoy',
@@ -15,7 +15,7 @@ setuptools.setup(
 
     packages=setuptools.find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
-        'Django>=1.6',
+        'Django>=1.8',
         'factory_boy>=2',
     ],
 
