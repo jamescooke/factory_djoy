@@ -107,6 +107,8 @@ class TestUserFactory(TestCase):
         user = self.user_model.objects.first()
         self.assertTrue(user.is_superuser)
 
+    # Documentation cases
+
     def test_documentation(self):
         """
         UserFactory can generate User that can log in as per README
@@ -156,5 +158,14 @@ class TestUserFactory(TestCase):
         """
         with self.assertRaises(ValidationError) as cm:
             UserFactory(username='user name')
+
+        self.assertEqual(list(cm.exception.error_dict), ['username'])
+
+    def test_build(self):
+        """
+        UserFactory will fail validation invoked by build strategy
+        """
+        with self.assertRaises(ValidationError) as cm:
+            UserFactory.build(username='BAD USER')
 
         self.assertEqual(list(cm.exception.error_dict), ['username'])
