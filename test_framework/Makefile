@@ -9,6 +9,7 @@ venv:
 	. venv/bin/activate && pip install pip==8.1.1  # Pin pip to pip-tools required version
 
 install:
+	pip install -r requirements/django19.txt
 	pip install -r requirements/base.txt
 	pip install -e ..
 
