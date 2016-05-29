@@ -12,9 +12,10 @@ class TestModels(TestCase):
         """
         inst = Item(name='test')
 
-        result = inst.save()
+        inst.save()
 
         self.assertEqual(Item.objects.count(), 1)
+        self.assertEqual(inst, Item.objects.first())
 
     def test_validation(self):
         """
