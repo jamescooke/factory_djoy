@@ -6,4 +6,4 @@ class Item(Model):
     """
     Single Item with one required field 'name'
     """
-    name = CharField(max_length=5)
+    name = CharField(max_length=5, unique=True)
