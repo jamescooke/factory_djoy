@@ -11,7 +11,8 @@ Factory Djoy
 Simple wrappers around Factory Boy for Django which call ``full_clean`` before
 saving instances to ensure all created instances are valid.
 
-Works on latest flavour of Django 1.9, with Factory Boy version 2 or greater.
+Works on latest flavours of Django 1.8 and 1.9, with Factory Boy version 2 or
+greater.
 
 
 Installation
@@ -28,10 +29,14 @@ Usage
 ``UserFactory``
 ---------------
 
+.. code-block:: python
+
+    >>> from factory_djoy import UserFactory
+
 ``UserFactory`` provides a simple wrapper over the ``django.contrib.auth.User``
 model which validates the generated User instance with ``full_clean`` before
-it's saved. You can use it anywhere that you need a User instance to be created
-in your project's factories.
+it is saved. You can use it anywhere that you need a User instance to be
+created in your project's factories.
 
 Given a simple test that requires a User instance, ``UserFactory`` can generate
 that at test time. All validated fields have valid values created for them.
@@ -39,21 +44,9 @@ This example is a bit contrived, but it works:
 
 .. code-block:: python
 
-    from django.test import TestCse
-    from factory_djoy import UserFactory
-
-
-    class TestUser(TestCase):
-
-        def test_happy(self):
-            """
-            User can log in
-            """
-            UserFactory(username='user_1', password='test')
-
-            result = self.client.login(username='user_1', password='test')
-
-            self.assertIs(result, True)
+    >>> from django.test import Client
+    >>> UserFactory(username='user_1', password='test')
+    >>> assert Client().login(username='user_1', password='test')
 
 The field-level validation built in to ``UserFactory`` requires that the
 ``User.username`` field only contains certain permitted characters. Therefore
@@ -67,6 +60,7 @@ The field-level validation built in to ``UserFactory`` requires that the
     ...
     ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
 
+``full_clean`` is triggered with both the ``build`` and ``create`` strategies.
 
 Motivation: Testing first
 =========================
@@ -81,6 +75,18 @@ were created through the default Django admin.
 Therefore, since it's so important that each factory creates valid data,
 these wrappers are tested rigorously using Django projects configured in the
 ``test_framework`` folder.
+
+
+Contribution
+============
+
+* Please see `Issues <https://github.com/jamescooke/factory_djoy/issues/>`_.
+  There are a number of outstanding tasks.
+
+* Please ensure that any provided code:
+  * Has been developed with "test first" process.
+  * Can be auto-merged in GitHub.
+  * Passes testing on Circle CI.
 
 
 See also
