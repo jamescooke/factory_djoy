@@ -15,7 +15,7 @@ setuptools.setup(
 
     packages=setuptools.find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
-        'Django>=1.6',
+        'Django>=1.8',
         'factory_boy>=2',
     ],
 
