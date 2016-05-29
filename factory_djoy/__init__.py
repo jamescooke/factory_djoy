@@ -1,4 +1,4 @@
-from .factories import UserFactory
+from .factories import CleanModelFactory, UserFactory
 
 
-__all__ = [UserFactory]
+__all__ = [CleanModelFactory, UserFactory]

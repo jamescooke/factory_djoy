@@ -7,6 +7,26 @@ from faker.factory import Factory as FakerFactory
 faker = FakerFactory.create()
 
 
+class CleanModelFactory(DjangoModelFactory):
+    """
+    Ensures that created instances pass Django's `full_clean` checks.
+
+    NOTE: may not work with `get_or_create`.
+    """
+    class Meta:
+        abstract = True
+
+    @classmethod
+    def _create(cls, model_class, *args, **kwargs):
+        """
+        Call `full_clean` on any created instance before saving
+        """
+        obj = model_class(*args, **kwargs)
+        obj.full_clean()
+        obj.save()
+        return obj
+
+
 class UserFactory(DjangoModelFactory):
     """
     Factory for default Django User model. Calls full_clean before saving to

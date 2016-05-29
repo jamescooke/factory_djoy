@@ -8,8 +8,8 @@ Factory Djoy
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
-Simple wrappers around Factory Boy for Django which call ``full_clean`` before
-saving instances to ensure all created instances are valid.
+Simple wrappers around Factory Boy for Django which call ``full_clean`` when
+creating instances to ensure that only valid data enters your Django database.
 
 Works on latest flavours of Django 1.8 and 1.9, with Factory Boy version 2 or
 greater.
@@ -25,6 +25,121 @@ Install with ``pip``::
 
 Usage
 =====
+
+``CleanModelFactory``
+---------------------
+
+This is a generic wrapper for ``DjangoModelFactory``. It provides all the
+functionality of ``DjangoModelFactory`` but extends ``create`` to call
+``full_clean`` at post-generation time. This validation ensures that your test
+factories only build instances that meet your models' field level and model
+level validation requirements - this leads to better tests.
+
+Example
+.......
+
+Given a very simple model called ``Item`` which has one name field that is
+required and has a max length of 5 characters:
+
+.. code-block:: python
+
+    class Item(Model):
+        """
+        Single Item with one required field 'name'
+        """
+        name = CharField(max_length=5, unique=True)
+
+Then we can create a clean factory for it using ``CleanModelFactory``:
+
+.. code-block:: python
+
+    from factory_djoy import CleanModelFactory
+
+    from yourapp.models import Item
+
+
+    class SimpleItemFactory(CleanModelFactory):
+        class Meta:
+            model = Item
+
+Now we haven't defined any default value for the ``name`` field, so if we use
+this factory with no keyword arguments then ``ValidationError`` is raised:
+
+.. code-block:: python
+
+    >>> SimpleItemFactory()
+    Traceback (most recent call last):
+    ...
+    django.core.exceptions.ValidationError: {'name': ['This field cannot be blank.']}
+
+However, if we pass a valid name, then everything works OK:
+
+.. code-block:: python
+
+    >>> SimpleItemFactory(name='tap')
+
+Automatically generating values
+...............................
+
+The point of using ``CleanModelFactory`` is not to make testing harder because
+lots of keyword arguments are needed for each factory call, instead it should
+be easier and more reliable. Really the work with ``SimpleItemFactory`` above
+is not complete.
+
+Now we replace ``SimpleItemFactory`` with a new ``ItemFactory`` that generates
+the required ``name`` field by default. We're going to use ``factory_boy``'s
+`Fuzzy attributes <http://factoryboy.readthedocs.io/en/latest/fuzzy.html>`_ to
+generate random default values each time the model is instantiated and because
+``full_clean`` is called every time an instance is created, we will know that
+every instance passed validation.
+
+.. code-block:: python
+
+    from factory.fuzzy import FuzzyText
+    from factory_djoy import CleanModelFactory
+
+
+    class ItemFactory(CleanModelFactory):
+        class Meta:
+            model = Item
+
+        name = FuzzyText(length=5)
+
+Now we can happily generate multiple instances of ``Item`` leaving the factory
+to create random names for us.
+
+.. code-block:: python
+
+    >>> item = ItemFactory()
+    >>> item.name
+    'TcEBK'
+
+Alternatively, if you wanted all your created ``Item`` instances to have the
+name value for ``name`` each time, you can just set that in the factory
+declaration.
+
+.. code-block:: python
+
+    class FixedItemFactory(CleanModelFactory):
+        class Meta:
+            model = Item
+
+        name = 'thing'
+
+However, in this instance, you will receive ``ValidationErrors`` because
+``name`` is expected to be unique.
+
+.. code-block:: python
+
+    >>> FixedItemFactory.create_batch(2)
+    Traceback (most recent call last):
+    ...
+    django.core.exceptions.ValidationError: {'name': ['Item with this Name already exists.']}
+
+*Side note:* The ``ItemFactory`` example above is used in testing
+``factory_djoy``. The ``models.py`` can be found in ``test_framework`` and the
+tests can be found in the ``tests`` folder.
+
 
 ``UserFactory``
 ---------------
@@ -56,7 +171,7 @@ The field-level validation built in to ``UserFactory`` requires that the
 .. code-block:: python
 
     >>> UserFactory(username='user name')
-    Traceback (most recent call last)
+    Traceback (most recent call last):
     ...
     ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
 
@@ -84,8 +199,11 @@ Contribution
   There are a number of outstanding tasks.
 
 * Please ensure that any provided code:
+
   * Has been developed with "test first" process.
+
   * Can be auto-merged in GitHub.
+
   * Passes testing on Circle CI.
 
 
@@ -95,9 +213,11 @@ See also
 * `Development documentation
   <https://github.com/jamescooke/factory_djoy/blob/master/DEV.rst>`_ for info
   on how to build, test and upload.
+
 * `django-factory_boy <https://github.com/rbarrois/django-factory_boy>`_ which
   implements more factories for Django's stock models, but doesn't validate
   generated instances and has less tests.
+
 * `Django's model save vs full_clean
   <http://jamescooke.info/djangos-model-save-vs-full_clean.html>`_ for an
   explanation of how Django can screw up your data when saving.

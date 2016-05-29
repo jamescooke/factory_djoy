@@ -40,4 +40,4 @@ requirements:
 
 clean:
 	find . -name '*.pyc' -delete
-	rm -r django*
+	rm -r $(django_version)
