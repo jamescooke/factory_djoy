@@ -125,3 +125,15 @@ class TestFixedItemFactory(TestCase):
             FixedItemFactory.create_batch(2)
 
         self.assertEqual(list(cm.exception.error_dict), ['name'])
+
+    def test_happy_build_no_name(self):
+        """
+        FixedItemFactory can be used to create an Item with an empty
+        """
+        item = FixedItemFactory.build(name='')
+
+        result = item.save()
+
+        self.assertIsNone(result)
+        self.assertEqual(Item.objects.filter(name='').count(), 1)
+        self.assertEqual(item.name, '')
