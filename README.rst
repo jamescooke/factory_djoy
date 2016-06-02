@@ -196,6 +196,12 @@ The field-level validation built in to ``UserFactory`` requires that the
     ...
     ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
 
+Same as with ``CleanModelFactory``, the ``build`` strategy is available if
+tests require invalid data:
+
+.. code-block:: python
+
+    >>> UserFactory.build(username='user name').save()
 
 
 Motivation: Testing first
