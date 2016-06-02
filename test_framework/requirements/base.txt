@@ -11,6 +11,7 @@ decorator==4.0.9          # via ipython, traitlets
 factory-boy==2.7.0
 fake-factory==0.5.7       # via factory-boy
 first==2.0.1              # via pip-tools
+ipdb==0.10.0
 ipython-genutils==0.1.0   # via traitlets
 ipython==4.2.0
 pexpect==4.1.0            # via ipython
@@ -24,4 +25,4 @@ traitlets==4.2.1          # via ipython
 
 # The following packages are commented out because they are
 # considered to be unsafe in a requirements file:
-# setuptools                # via ipython
+# setuptools                # via ipdb, ipython
