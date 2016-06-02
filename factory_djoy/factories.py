@@ -44,7 +44,8 @@ class UserFactory(DjangoModelFactory):
     @post_generation
     def z_full_clean(self, create, extracted, **kwargs):
         """
-        Assert that created User is "clean" in Django's opinion.
+        Assert that created User is "clean" in Django's opinion if build
+        strategy is happening.
 
         NOTE: function name is prefixed with 'z_' so that it runs after the
         'password' post generation function.
@@ -53,4 +54,5 @@ class UserFactory(DjangoModelFactory):
             ValidationError: If there are any invalid fields in the final User
                 object.
         """
-        self.full_clean()
+        if create:
+            self.full_clean()

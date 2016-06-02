@@ -119,6 +119,27 @@ class TestUserFactory(TestCase):
 
         self.assertIs(result, True)
 
+    def test_build(self):
+        """
+        UserFactory can build a User without validating
+        """
+        result = UserFactory.build(username='BAD USER')
+
+        self.assertEqual(self.user_model.objects.count(), 0)
+        self.assertEqual(result.username, 'BAD USER')
+
+    def test_build_save(self):
+        """
+        UserFactory can be saved with invalid data if build is used
+        """
+        user = UserFactory.build(username='bad user')
+
+        result = user.save()
+
+        self.assertIsNone(result)
+        self.assertEqual(self.user_model.objects.count(), 1)
+        self.assertEqual(self.user_model.objects.get(username='bad user'), user)
+
     # Invalidation cases
 
     def test_fail_integrity(self):
@@ -156,14 +177,5 @@ class TestUserFactory(TestCase):
         """
         with self.assertRaises(ValidationError) as cm:
             UserFactory(username='user name')
-
-        self.assertEqual(list(cm.exception.error_dict), ['username'])
-
-    def test_build(self):
-        """
-        UserFactory will fail validation invoked by build strategy
-        """
-        with self.assertRaises(ValidationError) as cm:
-            UserFactory.build(username='BAD USER')
 
         self.assertEqual(list(cm.exception.error_dict), ['username'])
