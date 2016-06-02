@@ -42,6 +42,38 @@ class TestSimpleItemFactory(TestCase):
         self.assertEqual(Item.objects.count(), 1)
         self.assertEqual(result, Item.objects.filter(name='tap').first())
 
+    def test_happy_build(self):
+        """
+        SimpleItemFactory can be built with invalid data
+        """
+        result = SimpleItemFactory.build()
+
+        self.assertEqual(Item.objects.count(), 0)
+        self.assertEqual(result.name, '')
+
+    def test_happy_build_save(self):
+        """
+        SimpleItemFactory built instance can be saved to database
+        """
+        item = SimpleItemFactory.build()
+
+        result = item.save()
+
+        self.assertIsNone(result)
+        self.assertEqual(Item.objects.count(), 1)
+
+    def test_happy_build_not_clean(self):
+        """
+        SimpleItemFactory can be built with invalid data, can not full clean
+        """
+        item = SimpleItemFactory.build()
+
+        with self.assertRaises(ValidationError) as cm:
+            item.full_clean()
+
+        self.assertEqual(Item.objects.count(), 0)
+        self.assertEqual(list(cm.exception.error_dict), ['name'])
+
     # Invalidation cases
 
     def test_missing_name(self):
