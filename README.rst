@@ -32,7 +32,7 @@ Usage
 This is a generic wrapper for ``DjangoModelFactory``. It provides all the
 functionality of ``DjangoModelFactory`` but extends ``create`` to call
 ``full_clean`` at post-generation time. This validation ensures that your test
-factories only build instances that meet your models' field level and model
+factories only create instances that meet your models' field level and model
 level validation requirements - this leads to better tests.
 
 Example
@@ -136,6 +136,27 @@ However, in this instance, you will receive ``ValidationErrors`` because
     ...
     django.core.exceptions.ValidationError: {'name': ['Item with this Name already exists.']}
 
+``full_clean`` is triggered only with the ``create`` strategy. Therefore using
+``build`` followed by ``save`` can provide a way to emulate "bad" data in your
+Django database if that's required. In this example, we can create an ``Item``
+instance without a ``name``.
+
+.. code-block:: python
+
+    >>> item = FixedItemFactory.build(name='')
+    >>> item.save()
+    >>> assert item.id
+
+After saving successfully, if ``full_clean`` is called then the saved ``Item``
+will fail validation because it does not have a ``name``:
+
+.. code-block:: python
+
+    >>> item.full_clean()
+    Traceback (most recent call last):
+    ...
+    django.core.exceptions.ValidationError: {'name': ['This field cannot be blank.']}
+
 *Side note:* The ``ItemFactory`` example above is used in testing
 ``factory_djoy``. The ``models.py`` can be found in ``test_framework`` and the
 tests can be found in the ``tests`` folder.
@@ -175,7 +196,13 @@ The field-level validation built in to ``UserFactory`` requires that the
     ...
     ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
 
-``full_clean`` is triggered with both the ``build`` and ``create`` strategies.
+Same as with ``CleanModelFactory``, the ``build`` strategy is available if
+tests require invalid data:
+
+.. code-block:: python
+
+    >>> UserFactory.build(username='user name').save()
+
 
 Motivation: Testing first
 =========================

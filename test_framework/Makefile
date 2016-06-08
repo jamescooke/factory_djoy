@@ -10,7 +10,7 @@ venv:
 
 install:
 	pip install -r requirements/django19.txt
-	pip install -r requirements/base.txt
+	pip install -r requirements/local.txt
 	pip install -e ..
 
 build: build-project build-app link-models link-tests
