@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='factory_djoy',
-    version='0.3',
+    version='0.4',
 
     description="Wrappers around Factory Boy's Django Factories",
     url='http://github.com/jamescooke/factory_djoy',
