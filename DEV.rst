@@ -3,6 +3,7 @@ Development and Testing
 
 How to work on and test Factory Djoy, across different versions of Django.
 
+
 Quick start
 -----------
 
@@ -42,54 +43,74 @@ For each version of Django tested, a default project and app exist in the
 
 This structure has the following features:
 
-* A folder for each version of Django. For example, the Django 1.9 project is
-  in the ``test_framework/django19`` folder. Each project is created with the
-  default ``django-admin startproject`` command.
+* ``test_framework`` contains a folder for each version of Django. For example,
+  the Django 1.9 project is in the ``test_framework/django19`` folder.
 
-* A test settings file which includes all the default settings as installed by
-  Django, but adds the ``djoyapp`` app to the list of ``INSTALLED_APPS``.
-
-* A ``models.py`` installed in the app which provides some models used for
-  testing.
-
-* Initial migrations for the models above also exist, created using the
-  matching version of Django using the default ``./manage.py makemigrations``
+* Every project is created with the default ``django-admin startproject``
   command.
 
-* A ``tests`` folder wired into the Django project root. These are the tests
-  that assert that ``factory_djoy`` behaves as expected.
+* In every project, a test settings file contains all the default settings as
+  installed by Django, but adds the ``djoyapp`` app to the list of
+  ``INSTALLED_APPS``.
 
-* Tests are executed through the default ``./manage.py test`` command.
+* Every ``djoyapp`` contains a ``models.py`` and provides some models used for
+  testing.
+
+* Initial migrations for the models also exist, created using the matching
+  version of Django using the default ``./manage.py makemigrations`` command.
+
+* Every project has a ``tests`` folder wired into the Django project root.
+  This contains the tests that assert that ``factory_djoy`` behaves as
+  expected.
+
+* Every project's tests are executed through the default ``./manage.py test``
+  command.
+
 
 Versioning notes
 ................
 
 * ``tox`` is used to manage versions of Python and Django installed at test
   time.
+
 * The latest point release from each major Django version is used, excluding
   versions that are no longer supported.
+
 * The current version of Django in use at testing is compiled into each
   ``django*.txt`` file using ``pip-compile`` invoked by ``make requirements``
   in the ``test_framework`` folder.
 
-Creating Django test projects
-.............................
 
-Recipes in the test framework's ``Makefile`` sniff out the virtual
-environment's currently installed version of Django and use that to create a
-test Django project for that version.
+Creating Django test projects for Django version
+................................................
 
-To invoke project creation call::
+In order to add a version of Django to the test run:
 
-    make build
+* Install the new version of Django into the current virtual environment::
 
-This creates a new test Django project called ``djoyproject`` containing a
-single test app called ``djoyapp``. Then the structures outlined above are
-linked and migrations created.
+      pip install -U django
 
+* Ask the new version of Django to create projects and all ``test_framework``
+  structures::
 
-Please note that creating a Django test project will fail if the target folder
-already exists. All ``django*`` folders can be removed with ``make clean``.
+      cd test_framework
+      make build
+
+  Please note that creating a Django test project will fail if the target
+  folder already exists. All ``django*`` folders can be removed with ``make
+  clean`` - they can be rebuilt again identically with the ``build`` recipe.
+
+* Add a requirements file for the new version of Django. For version ``1.10``::
+
+      cd test_framework/requirements
+      cat > django110.in
+      Django>=1.10,<1.11^D
+      make all
+
+* Add the new Django version to ``tox.ini``. (There's probably a better DRYer
+  way to complete this.)
+
+* Remember to add the new Django version to the README and do a release.
 
 
 Working locally
