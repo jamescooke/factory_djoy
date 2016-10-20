@@ -11,8 +11,8 @@ Factory Djoy
 Simple wrappers around Factory Boy for Django which call ``full_clean`` when
 creating instances to ensure that only valid data enters your Django database.
 
-Works on latest flavours of Django 1.8 and 1.9, with Factory Boy version 2 or
-greater.
+Works on latest flavours of Django 1.8, 1.9 and 1.10, with Factory Boy version
+2 or greater.
 
 
 Installation

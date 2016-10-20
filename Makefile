@@ -2,7 +2,7 @@
 
 venv:
 	virtualenv venv --python=python3.5
-	. venv/bin/activate && pip install pip==8.1.1  # Pin pip to pip-tools required version
+	. venv/bin/activate && pip install -U pip
 
 install:
 	pip install -r requirements/base.txt
