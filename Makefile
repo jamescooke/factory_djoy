@@ -13,6 +13,7 @@ test:
 lint:
 	flake8 factory_djoy
 	flake8 tests
+	bandit -r factory_djoy
 
 dist:
 	python setup.py sdist bdist_wheel
