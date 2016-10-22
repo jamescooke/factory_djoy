@@ -24,6 +24,7 @@ test-upload:
 
 test-install:
 	pip install -r test_framework/requirements/local.txt
+	pip install -r test_framework/requirements/django110.txt
 	pip install -i https://testpypi.python.org/pypi factory-djoy
 
 upload:
