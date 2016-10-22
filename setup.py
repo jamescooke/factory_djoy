@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='factory_djoy',
-    version='0.5',
+    version='0.5.0',
 
     description='Factories for Django, creating valid instances every time',
     url='http://github.com/jamescooke/factory_djoy',
