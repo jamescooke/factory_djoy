@@ -1,4 +1,5 @@
 bandit
+docutils
 flake8
 pip-tools
 tox

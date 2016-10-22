@@ -14,6 +14,7 @@ lint:
 	flake8 factory_djoy
 	flake8 tests
 	bandit -r factory_djoy
+	python setup.py check --metadata --restructuredtext --strict
 
 dist:
 	python setup.py sdist bdist_wheel
