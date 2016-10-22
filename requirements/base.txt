@@ -5,6 +5,7 @@
 #    pip-compile --output-file base.txt base.in
 #
 bandit==1.1.0
+check-manifest==0.34
 click==6.6                # via pip-tools
 docutils==0.12
 first==2.0.1              # via pip-tools
