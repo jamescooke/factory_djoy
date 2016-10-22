@@ -6,7 +6,7 @@ setuptools.setup(
     name='factory_djoy',
     version='0.4',
 
-    description="Wrappers around Factory Boy's Django Factories",
+    description='Factories for Django, creating valid instances every time',
     url='http://github.com/jamescooke/factory_djoy',
     author='James Cooke',
     author_email='github@jamescooke.info',
