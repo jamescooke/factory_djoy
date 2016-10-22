@@ -1,4 +1,4 @@
-.PHONY: venv install test lint sdist upload requirements clean
+.PHONY: venv install test lint dist upload requirements clean
 
 venv:
 	virtualenv venv --python=python3.5
@@ -14,8 +14,8 @@ lint:
 	flake8 factory_djoy
 	flake8 tests
 
-sdist:
-	python setup.py sdist
+dist:
+	python setup.py sdist bdist_wheel
 
 upload:
 	twine upload dist/factory_djoy-*.tar.gz

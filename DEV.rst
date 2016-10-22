@@ -141,7 +141,10 @@ Helper recipes
 The root ``Makefile`` has a couple of helper recipes (note this is different to
 the ``Makefile`` in ``test_settings``):
 
-* ``sdist``: Creates the distribution.
+* ``dist``: Creates the distribution files.
+
 * ``upload``: Push generated distribution to PyPI.
+
 * ``requirements``: User ``pip-compile`` to compile all requirements.
+
 * ``clean``: Remove all compiled Python files, distributions, etc.
