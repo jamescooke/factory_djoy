@@ -135,6 +135,57 @@ Django 1.9, after calling ``make build``::
     ./manage.py test --settings=djoyproject.test_settings
 
 
+Release process
+---------------
+
+Decide the new version number. Semantic versioning is used and it will look
+like ``1.2.3``.
+
+* In a Pull Request for the release:
+
+  * Update `RELEASE_NOTES.rst </RELEASE_NOTES.rst>`_ with changes.
+
+  * Set version number in `setup.py </setup.py>` to ``1.2.3``.
+
+  * Ensure Pull Request is GREEN, then merge.
+
+* With the newly merged master:
+
+  * Run tests locally:
+
+    .. code-block:: sh
+
+        make lint test
+
+  * Clean out any old distributions and make new ones:
+
+    .. code-block:: sh
+
+        make clean dist
+
+  * Test upload with Test PyPI and follow it with an install direct from Test
+    PyPI:
+
+    .. code-block:: sh
+
+        make test-upload test-install
+
+  * Tag release branch and push it:
+
+    .. code-block:: sh
+
+        git tag v1.2.3
+        git push origin --tags
+
+  * Upload to PyPI:
+
+    .. code-block:: sh
+
+        make upload
+
+All done.
+
+
 Helper recipes
 --------------
 
