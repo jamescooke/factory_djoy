@@ -1,3 +1,6 @@
+bandit
+check-manifest
+docutils
 flake8
 pip-tools
 tox

@@ -233,17 +233,20 @@ Contribution
 
   * Passes testing on Circle CI.
 
+* Check out the `development documentation </DEV.rst>`_ for info on how to
+  build, test and upload.
+
 
 See also
 ========
 
-* `Development documentation
-  <https://github.com/jamescooke/factory_djoy/blob/master/DEV.rst>`_ for info
-  on how to build, test and upload.
-
 * `django-factory_boy <https://github.com/rbarrois/django-factory_boy>`_ which
   implements more factories for Django's stock models, but doesn't validate
   generated instances and has less tests.
+
+* `Django Factory Audit <http://jamescooke.info/django-factory-audit.html>`_
+  which compares every Django factory library I could find with respect to how
+  they create valid instances.
 
 * `Django's model save vs full_clean
   <http://jamescooke.info/djangos-model-save-vs-full_clean.html>`_ for an

@@ -4,9 +4,9 @@ import setuptools
 
 setuptools.setup(
     name='factory_djoy',
-    version='0.4',
+    version='0.5.0',
 
-    description="Wrappers around Factory Boy's Django Factories",
+    description='Factories for Django, creating valid instances every time',
     url='http://github.com/jamescooke/factory_djoy',
     author='James Cooke',
     author_email='github@jamescooke.info',
@@ -26,7 +26,9 @@ setuptools.setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Software Development :: Testing',

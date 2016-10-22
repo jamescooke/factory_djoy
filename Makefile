@@ -1,4 +1,4 @@
-.PHONY: venv install test lint sdist upload requirements clean
+.PHONY: venv install test lint dist upload requirements clean
 
 venv:
 	virtualenv venv --python=python3.5
@@ -13,18 +13,28 @@ test:
 lint:
 	flake8 factory_djoy
 	flake8 tests
+	bandit -r factory_djoy
+	python setup.py check --metadata --restructuredtext --strict
 
-sdist:
-	python setup.py sdist
+dist:
+	python setup.py sdist bdist_wheel
+
+test-upload:
+	twine upload -r test dist/factory_djoy-*
+
+test-install:
+	pip install -r test_framework/requirements/local.txt
+	pip install -i https://testpypi.python.org/pypi factory-djoy
 
 upload:
-	twine upload dist/factory_djoy-*.tar.gz
+	twine upload dist/factory_djoy-*
 
 requirements:
 	$(MAKE) -C requirements
 
 clean:
 	python setup.py clean
+	-rm -r build
 	-rm -r dist
 	-rm -r .tox
 	find . -name '*.pyc' -delete

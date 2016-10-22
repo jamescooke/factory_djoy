@@ -6,6 +6,7 @@ venv/
 # Building things
 *.egg-info
 .tox/
+build/
 dist/
 
 # Django local development can create sqlite files
