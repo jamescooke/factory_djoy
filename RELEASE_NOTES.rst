@@ -7,8 +7,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_ and
 this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 
-0.5_ - 2016/10/22
------------------
+0.5.0_ - 2016/10/22
+-------------------
 
 Added
 :::::
@@ -28,5 +28,5 @@ Added
 
 Stable testing release.
 
-.. _0.5: https://github.com/jamescooke/factory_djoy/compare/v0.4...v0.5
+.. _0.5.0: https://github.com/jamescooke/factory_djoy/compare/v0.4...v0.5.0
 .. _0.4: https://github.com/jamescooke/factory_djoy/compare/v0.3...v0.4
