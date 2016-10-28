@@ -2,6 +2,7 @@ bandit
 check-manifest
 docutils
 flake8
+isort
 pip-tools
 tox
 twine
