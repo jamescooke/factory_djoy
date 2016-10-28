@@ -80,6 +80,14 @@ Versioning notes
   ``django*.txt`` file using ``pip-compile`` invoked by ``make requirements``
   in the ``test_framework`` folder.
 
+* To push all versions in the ``test_framework`` forwards:
+
+  .. code-block:: sh
+
+      cd test_framework/requirements
+      rm *.txt
+      make all
+
 
 Creating Django test projects for Django version
 ................................................
