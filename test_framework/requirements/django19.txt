@@ -4,5 +4,4 @@
 #
 #    pip-compile --output-file django19.txt django19.in
 #
-
-Django==1.9.6
+Django==1.9.10
