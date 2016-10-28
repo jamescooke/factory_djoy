@@ -137,9 +137,9 @@ Create a virtual environment and install the requirements::
 
 The test framework means that all the tests can be run on the test models and
 factories using the standard ``manage.py`` test command. So, if working with
-Django 1.9, after calling ``make build``::
+Django 1.10, after calling ``make build``::
 
-    cd django19
+    cd django110
     ./manage.py test --settings=djoyproject.test_settings
 
 
