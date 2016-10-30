@@ -95,7 +95,7 @@ class TestSimpleItemFactory(TestCase):
         """
         CleanModelFactory does not provide get_or_create
         """
-        item = SimpleItemFactoryGOC(name='exist')
+        SimpleItemFactoryGOC(name='exist')
 
         with self.assertRaises(ValidationError):
             SimpleItemFactory(name='exist')
