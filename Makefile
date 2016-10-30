@@ -1,4 +1,4 @@
-.PHONY: venv install test lint dist upload requirements clean
+.PHONY: venv install test lint dist upload requirements clean flake8 isort
 
 venv:
 	virtualenv venv --python=python3.5
@@ -10,13 +10,17 @@ install:
 test:
 	tox
 
-lint:
-	flake8 factory_djoy
-	flake8 tests
-	isort -rc --diff factory_djoy tests > isort.out
-	if [ "$$(wc -l isort.out)" != "0 isort.out" ]; then cat isort.out; exit 1; fi
+lint: flake8 isort
 	bandit -r factory_djoy
 	python setup.py check --metadata --restructuredtext --strict
+
+flake8:
+	flake8 factory_djoy
+	flake8 tests
+
+isort:
+	isort -rc --diff factory_djoy > isort.out
+	if [ "$$(wc -l isort.out)" != "0 isort.out" ]; then cat isort.out; exit 1; fi
 
 dist:
 	python setup.py sdist bdist_wheel
