@@ -12,6 +12,7 @@ first==2.0.1              # via pip-tools
 flake8==3.0.4
 gitdb2==2.0.0             # via gitpython
 GitPython==2.1.0          # via bandit
+isort==4.2.5
 mccabe==0.5.2             # via flake8
 pbr==1.10.0               # via stevedore
 pip-tools==1.7.0

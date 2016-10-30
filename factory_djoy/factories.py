@@ -3,7 +3,6 @@ from factory import LazyFunction, PostGenerationMethodCall, post_generation
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
 
-
 faker = FakerFactory.create()
 
 

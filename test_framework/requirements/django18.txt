@@ -4,5 +4,4 @@
 #
 #    pip-compile --output-file django18.txt django18.in
 #
-
-Django==1.8.13
+Django==1.8.15

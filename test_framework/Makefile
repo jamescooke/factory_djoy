@@ -6,10 +6,10 @@ app_folder = $(django_version)/djoyapp
 
 venv:
 	virtualenv venv --python=python3.5
-	. venv/bin/activate && pip install pip==8.1.1  # Pin pip to pip-tools required version
+	. venv/bin/activate && pip install -U pip
 
 install:
-	pip install -r requirements/django19.txt
+	pip install -r requirements/django110.txt
 	pip install -r requirements/local.txt
 	pip install -e ..
 

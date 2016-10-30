@@ -1,4 +1,5 @@
 factory_boy
 ipdb
 ipython
+isort
 pip-tools
