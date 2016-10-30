@@ -13,6 +13,8 @@ test:
 lint:
 	flake8 factory_djoy
 	flake8 tests
+	isort -rc --diff factory_djoy tests > isort.out
+	if [ "$$(wc -l isort.out)" != "0 isort.out" ]; then cat isort.out; exit 1; fi
 	bandit -r factory_djoy
 	python setup.py check --metadata --restructuredtext --strict
 

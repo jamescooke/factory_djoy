@@ -11,3 +11,6 @@ dist/
 
 # Django local development can create sqlite files
 db.sqlite3
+
+# isort
+isort.out
