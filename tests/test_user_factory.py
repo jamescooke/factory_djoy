@@ -39,6 +39,9 @@ class TestUserFactory(TestCase):
         Generated username, names and email do not match between created Users.
         NOTE possible failure if faker gives two identical values on
         consecutive calls.
+
+        TODO test needs turning down - only username is unique between
+        instances.
         """
         UserFactory.create_batch(2)
 
