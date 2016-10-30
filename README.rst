@@ -157,9 +157,14 @@ will fail validation because it does not have a ``name``:
     ...
     django.core.exceptions.ValidationError: {'name': ['This field cannot be blank.']}
 
-*Side note:* The ``ItemFactory`` example above is used in testing
-``factory_djoy``. The ``models.py`` can be found in ``test_framework`` and the
-tests can be found in the ``tests`` folder.
+Side notes
+++++++++++
+
+* The ``ItemFactory`` example above is used in testing ``factory_djoy``. The
+  ``models.py`` can be found in ``test_framework`` and the tests can be found
+  in the ``tests`` folder.
+
+* ``CleanModelFactory`` does not provide any ``get_or_create`` behaviour.
 
 
 ``UserFactory``
