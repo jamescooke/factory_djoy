@@ -13,6 +13,12 @@ class SimpleItemFactory(CleanModelFactory):
         model = Item
 
 
+class SimpleItemFactoryGOC(CleanModelFactory):
+    class Meta:
+        model = Item
+        django_get_or_create = ('name',)
+
+
 class ItemFactory(CleanModelFactory):
     class Meta:
         model = Item
@@ -84,6 +90,17 @@ class TestSimpleItemFactory(TestCase):
             SimpleItemFactory()
 
         self.assertEqual(['name'], list(cm.exception.error_dict.keys()))
+
+    def test_no_get_or_create(self):
+        """
+        CleanModelFactory does not provide get_or_create
+        """
+        SimpleItemFactoryGOC(name='exist')
+
+        with self.assertRaises(ValidationError):
+            SimpleItemFactory(name='exist')
+
+        self.assertEqual(Item.objects.count(), 1)
 
 
 class TestItemFactory(TestCase):
