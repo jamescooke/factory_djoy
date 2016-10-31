@@ -1,5 +1,10 @@
 from django.contrib.auth import get_user_model
-from factory import LazyFunction, PostGenerationMethodCall, post_generation
+from factory import (
+    LazyFunction,
+    PostGenerationMethodCall,
+    lazy_attribute,
+    post_generation,
+)
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
 
@@ -9,8 +14,6 @@ faker = FakerFactory.create()
 class CleanModelFactory(DjangoModelFactory):
     """
     Ensures that created instances pass Django's `full_clean` checks.
-
-    NOTE: may not work with `get_or_create`.
     """
     class Meta:
         abstract = True
@@ -38,7 +41,20 @@ class UserFactory(DjangoModelFactory):
     first_name = LazyFunction(faker.first_name)
     last_name = LazyFunction(faker.last_name)
     password = PostGenerationMethodCall('set_password', 'password')
-    username = LazyFunction(lambda: faker.profile()['username'])
+
+    @lazy_attribute
+    def username(self):
+        """
+        Create a username from faker's profile generator, but ensure that it's
+        not in the database before using it. This is a pre-full_clean check.
+        """
+        # TODO cap the retries
+        # TODO log the tried username values
+        while(True):
+            username = faker.profile()['username']
+            if get_user_model().objects.filter(username=username).count() == 0:
+                return username
+
 
     @post_generation
     def z_full_clean(self, create, extracted, **kwargs):

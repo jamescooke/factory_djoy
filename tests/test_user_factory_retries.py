@@ -1,9 +1,14 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from mock import patch
 
 from factory_djoy import UserFactory
 from factory_djoy.factories import faker
+
+try:
+    from unittest.mock import patch
+except ImportError:
+    from mock import patch
+
 
 
 class TestUserFactoryRetries(TestCase):
