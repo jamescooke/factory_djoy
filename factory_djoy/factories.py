@@ -9,6 +9,7 @@ from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
 
 faker = FakerFactory.create()
+max_retries = 200
 
 
 class CleanModelFactory(DjangoModelFactory):
@@ -47,14 +48,31 @@ class UserFactory(DjangoModelFactory):
         """
         Create a username from faker's profile generator, but ensure that it's
         not in the database before using it. This is a pre-full_clean check.
-        """
-        # TODO cap the retries
-        # TODO log the tried username values
-        while(True):
-            username = faker.profile()['username']
-            if get_user_model().objects.filter(username=username).count() == 0:
-                return username
 
+        Uses a simple single uniqueness check, cached against a set of already
+        tried names. 200 max tries is on the username generation, not the round
+        trip to the database - although that could be changed if required.
+
+        Raises:
+            RuntimeError: If a unique username can not be found after 200
+                retries.
+        """
+        non_uniques = set()
+        for _ in range(max_retries):
+            username = faker.profile()['username']
+            username_unique = (
+                username not in non_uniques and
+                get_user_model().objects.filter(username=username).count() == 0
+            )
+            if username_unique:
+                return username
+            non_uniques.add(username)
+        else:
+            non_uniques_str = ', '.join(['"{}"'.format(username) for username in non_uniques])
+            message = (
+                'Unique username not found after 200 tries. Unique values tried: {}'
+            ).format(non_uniques_str)
+            raise RuntimeError(message)
 
     @post_generation
     def z_full_clean(self, create, extracted, **kwargs):
