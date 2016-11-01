@@ -34,26 +34,28 @@ class TestUserFactory(TestCase):
 
     def test_make_multi(self):
         """
-        UserFactory can create multiple Users with default settings
+        UserFactory can create two Users with default settings using batch
 
-        Generated username, names and email do not match between created Users.
-        NOTE possible failure if faker gives two identical values on
-        consecutive calls.
-
-        TODO test needs turning down - only username is unique between
-        instances.
+        Only username is unique between instances.
         """
         UserFactory.create_batch(2)
 
         self.assertEqual(self.user_model.objects.count(), 2)
         user_first = self.user_model.objects.first()
         user_last = self.user_model.objects.last()
-        for varname in ('username', 'first_name', 'last_name', 'email'):
-            self.assertNotEqual(
-                getattr(user_first, varname),
-                getattr(user_last, varname),
-                'Both users found to have same "{}" attribute'.format(varname)
-            )
+        self.assertNotEqual(user_first.username, user_last.username)
+
+    def test_make_multi_large(self):
+        """
+        UserFactory can generate 1000 users
+
+        For all generated users, assert that they are valid after creation
+        """
+        UserFactory.create_batch(1000)
+
+        self.assertEqual(self.user_model.objects.count(), 1000)
+        for user in self.user_model.objects.all():
+            user.full_clean()
 
     def test_custom_password(self):
         """
@@ -182,3 +184,12 @@ class TestUserFactory(TestCase):
             UserFactory(username='user name')
 
         self.assertEqual(list(cm.exception.error_dict), ['username'])
+
+    def test_fail_username_override(self):
+        """
+        UserFactory will raise IntegrityError when username is collided
+        """
+        existing_user = UserFactory()
+
+        with self.assertRaises(IntegrityError):
+            UserFactory(username=existing_user.username)
