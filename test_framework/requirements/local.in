@@ -1,3 +1,5 @@
+# Requirements for local development only
+
 factory_boy
 ipdb
 ipython

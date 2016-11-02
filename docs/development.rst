@@ -128,7 +128,8 @@ If there are multiple tests to run this can become inefficient with ``tox``.
 Therefore, you can use the helper local environment configured inside
 ``test_framework``. This installs Python 3.5 and latest Django.
 
-Create a virtual environment and install the requirements::
+Create a new virtual environment in the ``test_framework`` folder and install
+the requirements::
 
     cd test_framework
     make venv
@@ -137,10 +138,10 @@ Create a virtual environment and install the requirements::
 
 The test framework means that all the tests can be run on the test models and
 factories using the standard ``manage.py`` test command. So, if working with
-Django 1.10, after calling ``make build``::
+Django 1.10, after calling ``make build`` to create the app and folder
+structure for that Django version, then all tests can be run with::
 
-    cd django110
-    ./manage.py test --settings=djoyproject.test_settings
+    make test
 
 
 Release process
