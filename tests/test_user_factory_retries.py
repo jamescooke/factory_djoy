@@ -1,7 +1,10 @@
+import unittest
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 from factory_djoy import UserFactory
+from factory_djoy.factories import unique_username
 
 try:
     from unittest.mock import patch
@@ -64,3 +67,18 @@ class TestUserFactoryRetries(TestCase):
         message = cm.exception.args[0]
         self.assertIn('Unique username not found', message)
         self.assertIn('Unique values tried: "zbeard"', message)
+
+
+class TestUniqueUsername(unittest.TestCase):
+
+    def test_happy(self):
+        """
+        unique_username wrapper is able to provide 2000 unique names
+
+        This appears to take around 1000ms on a crappy toaster using 1 core.
+        """
+        unique_username_gen = unique_username()
+
+        unique_usernames = {next(unique_username_gen) for _ in range(2000)}
+
+        self.assertEqual(len(unique_usernames), 2000)

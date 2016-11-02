@@ -8,7 +8,7 @@ from factory import (
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
 
-faker = FakerFactory.create()
+faker = FakerFactory.create(providers=[])
 max_retries = 200
 
 
@@ -59,7 +59,7 @@ class UserFactory(DjangoModelFactory):
         """
         non_uniques = set()
         for _ in range(max_retries):
-            username = faker.profile()['username']
+            username = unique_username()
             username_unique = (
                 username not in non_uniques and
                 get_user_model().objects.filter(username=username).count() == 0
@@ -89,3 +89,15 @@ class UserFactory(DjangoModelFactory):
         """
         if create:
             self.full_clean()
+
+
+def unique_username():
+    """
+    Generate a unique username. Keeps a set of previously generated usern
+    """
+    used = set()
+    while(True):
+        username = faker.user_name()
+        if username not in used:
+            used.add(username)
+            yield username
