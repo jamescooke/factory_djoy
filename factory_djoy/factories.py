@@ -7,6 +7,7 @@ from factory import (
 )
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
+from six import advance_iterator
 
 faker = FakerFactory.create(providers=[])
 max_retries = 200
@@ -57,9 +58,10 @@ class UserFactory(DjangoModelFactory):
             RuntimeError: If a unique username can not be found after 200
                 retries.
         """
+        unique_usernames = unique_username()
         non_uniques = set()
         for _ in range(max_retries):
-            username = unique_username()
+            username = advance_iterator(unique_usernames)
             username_unique = (
                 username not in non_uniques and
                 get_user_model().objects.filter(username=username).count() == 0

@@ -17,6 +17,7 @@ setuptools.setup(
     install_requires=[
         'Django>=1.8',
         'factory_boy>=2.7',
+        'six>=1.10',
     ],
 
     classifiers=[
