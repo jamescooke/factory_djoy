@@ -14,3 +14,6 @@ db.sqlite3
 
 # isort
 isort.out
+
+# sphinx
+docs/_build/
