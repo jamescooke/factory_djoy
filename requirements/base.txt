@@ -39,6 +39,7 @@ six==1.10.0               # via bandit, livereload, pip-tools, sphinx, stevedore
 smmap2==2.0.1             # via gitdb2
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.6.0
+sphinx-rtd-theme==0.1.9
 sphinx==1.4.8
 stevedore==1.18.0         # via bandit
 tornado==4.4.2            # via livereload, sphinx-autobuild
