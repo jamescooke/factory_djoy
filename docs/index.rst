@@ -1,22 +1,44 @@
-.. Factory Djoy documentation master file, created by
-   sphinx-quickstart on Wed Nov  2 18:01:10 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Factory Djoy
+::::::::::::
 
-Welcome to Factory Djoy's documentation!
-========================================
+.. image:: https://circleci.com/gh/jamescooke/factory_djoy.svg?style=shield
+    :target: https://circleci.com/gh/jamescooke/factory_djoy
+.. image:: https://img.shields.io/pypi/pyversions/factory_djoy.svg?maxAge=2592000
+    :target: https://pypi.python.org/pypi/factory_djoy
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
-Contents:
+Factories for Django, creating valid model instances every time.
+
+Simple wrappers around Factory Boy for Django which call ``full_clean`` when
+creating instances to ensure that only valid data enters your Django database.
+
+Compatible with:
+
+* Latest flavours of Django 1.8, 1.9 and 1.10.
+
+* Python 2.7, 3.4 and 3.5.
+
+* Factory Boy version 2 or greater.
+
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
 
+   quickstart
+   userfactory
+   cleanmodelfactory
+   motivation
+   contribution
+   development
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
