@@ -1,5 +1,5 @@
 Development and Testing
-=======================
+:::::::::::::::::::::::
 
 How to work on and test Factory Djoy, across different versions of Django.
 

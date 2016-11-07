@@ -8,6 +8,8 @@ Factory Djoy
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
+Factories for Django, creating valid model instances every time.
+
 Simple wrappers around Factory Boy for Django which call ``full_clean`` when
 creating instances to ensure that only valid data enters your Django database.
 
@@ -20,13 +22,23 @@ Compatible with:
 * Factory Boy version 2 or greater.
 
 
-Resources
-=========
+Contents
+--------
 
-* `Documentation on ReadTheDocs <http://factory-djoy.readthedocs.io/>`_
+.. toctree::
+   :maxdepth: 2
 
-* `Package on PyPI <https://pypi.python.org/pypi/factory_djoy>`_
+   quickstart
+   userfactory
+   cleanmodelfactory
+   motivation
+   contribution
+   development
 
-* `Source code on GitHub <https://github.com/jamescooke/factory_djoy>`_
 
-* `Licensed on MIT <https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE>`_
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

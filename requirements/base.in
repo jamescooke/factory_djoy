@@ -4,5 +4,8 @@ docutils
 flake8
 isort
 pip-tools
+sphinx
+sphinx-autobuild
+sphinx_rtd_theme
 tox
 twine
