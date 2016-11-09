@@ -18,19 +18,15 @@ class TestUserFactoryRetries(TestCase):
 
     def setUp(self):
         super(TestUserFactoryRetries, self).setUp()
-        patcher = patch('factory_djoy.factories.faker.profile')
-        self.m_profile = patcher.start()
+        patcher = patch('factory_djoy.factories.advance_iterator')
+        self.m_advance_iterator = patcher.start()
         self.addCleanup(patcher.stop)
 
     def test_set_up(self):
         """
         setUp: Faker has been seeded, creates Users with the same username
         """
-        self.m_profile.side_effect = (
-            {'username': 'zbeard'},
-            {'username': 'vporter'},
-            {'username': 'frobinson'},
-        )
+        self.m_advance_iterator.side_effect = ('zbeard', 'vporter', 'frobinson')
 
         result = [UserFactory(), UserFactory(), UserFactory()]
 
@@ -41,10 +37,7 @@ class TestUserFactoryRetries(TestCase):
         """
         UserFactory retries username generation in case of collision
         """
-        self.m_profile.side_effect = (
-            {'username': 'zbeard'},
-            {'username': 'vporter'},
-        )
+        self.m_advance_iterator.side_effect = ('zbeard', 'vporter')
         self.model.objects.create(username='zbeard')
 
         result = UserFactory()
@@ -55,9 +48,9 @@ class TestUserFactoryRetries(TestCase):
         """
         UserFactory will only retry 200 times, then raises RuntimeError
         """
-        profile_values = ({'username': 'zbeard'},) * 200
+        profile_values = ('zbeard',) * 200
         profile_values += (ValueError('201st call'),)
-        self.m_profile.side_effect = profile_values
+        self.m_advance_iterator.side_effect = profile_values
         self.model.objects.create(username='zbeard')
 
         with self.assertRaises(RuntimeError) as cm:
