@@ -70,7 +70,7 @@ class UserFactory(DjangoModelFactory):
                 return username
             non_uniques.add(username)
         else:
-            non_uniques_str = ', '.join(['"{}"'.format(username) for username in non_uniques])
+            non_uniques_str = ', '.join(['"{}"'.format(name) for name in non_uniques])
             message = (
                 'Unique username not found after 200 tries. Unique values tried: {}'
             ).format(non_uniques_str)
