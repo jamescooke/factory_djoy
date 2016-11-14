@@ -1,4 +1,7 @@
+# Requirements for local development only
+
 factory_boy
+flake8
 ipdb
 ipython
 isort
