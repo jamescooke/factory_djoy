@@ -3,12 +3,26 @@ UserFactory
 
 .. code-block:: python
 
-    >>> from factory_djoy import UserFactory
+    factory_djoy import UserFactory
 
-``UserFactory`` provides a simple wrapper over the ``django.contrib.auth.User``
-model which validates the generated User instance with ``full_clean`` before
-it is saved. You can use it anywhere that you need a User instance to be
-created in your project's factories.
+``UserFactory`` provides valid instances of the default Django user at
+``django.contrib.auth.User``.
+
+As a result of the limitations around saving Users to the database in Django,
+unique usernames are generated with a 3 step process:
+
+Finally, the instance is checked with a call to ``full_clean``. This means that
+if anything has gone wrong during generation, then a ``ValidationError`` will
+be raised. This also means that values that might be passed into the Factory
+are tested for validity:
+
+.. code-block:: python
+
+    >>> UserFactory(username='user name')
+    Traceback (most recent call last):
+    ...
+    ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
+
 
 Given a simple test that requires a User instance, ``UserFactory`` can generate
 that at test time. All validated fields have valid values created for them.
@@ -20,21 +34,20 @@ This example is a bit contrived, but it works:
     >>> UserFactory(username='user_1', password='test')
     >>> assert Client().login(username='user_1', password='test')
 
-The field-level validation built in to ``UserFactory`` requires that the
-``User.username`` field only contains certain permitted characters. Therefore
-``UserFactory`` will raise ``ValidationError`` if it attempts to create a
-``User`` instance with an invalid ``username``, or any other field value:
+
+Invalid / unsaved data
+======================
+
+If you need to create invalid data in your tests, then the ``build`` strategy
+is available:
 
 .. code-block:: python
 
-    >>> UserFactory(username='user name')
+    >>> user = UserFactory.build(username='user name')
+    >>> user.id is None
+    True
+    >>> user.full_clean()
     Traceback (most recent call last):
     ...
     ValidationError: {'username': ['Enter a valid username. This value may contain only letters, numbers and @/./+/-/_ characters.']}
-
-Same as with ``CleanModelFactory``, the ``build`` strategy is available if
-tests require invalid data:
-
-.. code-block:: python
-
-    >>> UserFactory.build(username='user name').save()
+    >>> user.save()
