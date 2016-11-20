@@ -23,7 +23,7 @@ Compatible with:
 Resources
 =========
 
-* `Documentation on ReadTheDocs <http://factory-djoy.readthedocs.io/>`_
+* `Documentation on ReadTheDocs <https://factory-djoy.readthedocs.io/>`_
 
 * `Package on PyPI <https://pypi.python.org/pypi/factory_djoy>`_
 

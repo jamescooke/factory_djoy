@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_ and
 this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+Unreleased
+----------
+
+Added
+:::::
+
+* Improve ``UserFactory`` so that it can generate unique usernames using Faker
+  and checking against Django's database before saving the instance.
+
+* `Documentation added <https://factory-djoy.readthedocs.io/>`_.
+
+Fixed
+:::::
+
+* Bug `username collision bug
+  <https://github.com/jamescooke/factory_djoy/issues/15>`_ in ``UserFactory``.
 
 0.5.0_ - 2016/10/22
 -------------------
