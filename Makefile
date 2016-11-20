@@ -28,6 +28,7 @@ dist:
 test-upload:
 	twine upload -r test dist/factory_djoy-*
 
+# Need to manually install dependencies since they are not on test pypi
 test-install:
 	pip install -r test_framework/requirements/local.txt
 	pip install -r test_framework/requirements/django110.txt

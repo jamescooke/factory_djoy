@@ -172,8 +172,7 @@ like ``1.2.3``.
 
 * In a Pull Request for the release:
 
-  * Update `RELEASE_NOTES.rst
-    <https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst>`_
+  * Update RELEASE_NOTES.rst_
     with changes. Main change at release time is to change "Unreleased" section
     to ``1.2.3_ - yyyy/mm/dd`` and include a link at the bottom of the
     document.
@@ -199,11 +198,16 @@ like ``1.2.3``.
         $ make clean dist
 
   * Test upload with Test PyPI and follow it with an install direct from Test
-    PyPI:
+    PyPI (might need to create a ``~/.pypirc`` file with settings for the test
+    server:
 
     .. code-block:: sh
 
-        $ make test-upload test-install
+        $ make test-upload
+        $ deactive
+        $ virtualenv /tmp/tenv
+        $ . /tmp/tenv/bin/activate
+        $ test-install
 
   * Tag release branch and push it:
 
@@ -220,6 +224,10 @@ like ``1.2.3``.
 
 All done.
 
+Checks:
+
+* Ensure that link in `release notes`_ to the new diff works OK on GitHub.
+
 
 Helper recipes
 --------------
@@ -234,3 +242,7 @@ the ``Makefile`` in ``test_settings``):
 * ``requirements``: User ``pip-compile`` to compile all requirements.
 
 * ``clean``: Remove all compiled Python files, distributions, etc.
+
+
+.. _RELEASE_NOTES.rst: https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst
+.. _release notes: https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst
