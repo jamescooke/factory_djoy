@@ -10,28 +10,38 @@ Quick start
 The test framework is already in place and ``tox`` is configured to make use of
 it. Therefore the quickest way to get going is to make use of it.
 
-Clone the repository and drop in::
+Clone the repository and drop in:
 
-    git clone git@github.com:jamescooke/factory_djoy.git
-    cd factory_djoy
+.. code-block:: sh
+
+    $ git clone git@github.com:jamescooke/factory_djoy.git
+    $ cd factory_djoy
 
 Create a virtual environment. This uses a bare call to ``virtualenv``, you
-might prefer to use ``workon``::
+might prefer to use ``workon``:
 
-    make venv
+.. code-block:: sh
 
-Activate the virtual environment and install requirements::
+    $ make venv
 
-    . venv/bin/activate
-    make install
+Activate the virtual environment and install requirements:
 
-Run all tests using ``tox`` for all versions of Python and Django::
+.. code-block:: sh
 
-    make test
+    $ . venv/bin/activate
+    $ make install
 
-Circle will also run linting before the main test run::
+Run all tests using ``tox`` for all versions of Python and Django:
 
-    make lint
+.. code-block:: sh
+
+    $ make test
+
+Circle will also run linting before the main test run:
+
+.. code-block:: sh
+
+    $ make lint
 
 
 Testing with real Django projects
@@ -84,9 +94,9 @@ Versioning notes
 
   .. code-block:: sh
 
-      cd test_framework/requirements
-      rm *.txt
-      make all
+      $ cd test_framework/requirements
+      $ rm *.txt
+      $ make all
 
 
 Creating Django test projects for Django version
@@ -94,26 +104,32 @@ Creating Django test projects for Django version
 
 In order to add a version of Django to the test run:
 
-* Install the new version of Django into the current virtual environment::
+* Install the new version of Django into the current virtual environment:
 
-      pip install -U django
+  .. code-block:: sh
+
+      $ pip install -U django
 
 * Ask the new version of Django to create projects and all ``test_framework``
-  structures::
+  structures:
 
-      cd test_framework
-      make build
+  .. code-block:: sh
+
+      $ cd test_framework
+      $ make build
 
   Please note that creating a Django test project will fail if the target
   folder already exists. All ``django*`` folders can be removed with ``make
   clean`` - they can be rebuilt again identically with the ``build`` recipe.
 
-* Add a requirements file for the new version of Django. For version ``1.10``::
+* Add a requirements file for the new version of Django. For version ``1.10``:
 
-      cd test_framework/requirements
-      cat > django110.in
-      Django>=1.10,<1.11^D
-      make all
+.. code-block:: sh
+
+      $ cd test_framework/requirements
+      $ cat > django110.in
+      $ Django>=1.10,<1.11^D
+      $ make all
 
 * Add the new Django version to ``tox.ini``. (There's probably a better DRYer
   way to complete this.)
@@ -129,19 +145,23 @@ Therefore, you can use the helper local environment configured inside
 ``test_framework``. This installs Python 3.5 and latest Django.
 
 Create a new virtual environment in the ``test_framework`` folder and install
-the requirements::
+the requirements:
 
-    cd test_framework
-    make venv
-    . venv/bin/activate
-    make install
+.. code-block:: sh
+
+    $ cd test_framework
+    $ make venv
+    $ . venv/bin/activate
+    $ make install
 
 The test framework means that all the tests can be run on the test models and
 factories using the standard ``manage.py`` test command. So, if working with
 Django 1.10, after calling ``make build`` to create the app and folder
-structure for that Django version, then all tests can be run with::
+structure for that Django version, then all tests can be run with:
 
-    make test
+.. code-block:: sh
+
+    $ make test
 
 
 Release process
@@ -164,33 +184,33 @@ like ``1.2.3``.
 
     .. code-block:: sh
 
-        make lint test
+        $ make lint test
 
   * Clean out any old distributions and make new ones:
 
     .. code-block:: sh
 
-        make clean dist
+        $ make clean dist
 
   * Test upload with Test PyPI and follow it with an install direct from Test
     PyPI:
 
     .. code-block:: sh
 
-        make test-upload test-install
+        $ make test-upload test-install
 
   * Tag release branch and push it:
 
     .. code-block:: sh
 
-        git tag v1.2.3
-        git push origin --tags
+        $ git tag v1.2.3
+        $ git push origin --tags
 
   * Upload to PyPI:
 
     .. code-block:: sh
 
-        make upload
+        $ make upload
 
 All done.
 
