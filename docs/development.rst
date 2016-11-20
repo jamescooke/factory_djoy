@@ -172,9 +172,15 @@ like ``1.2.3``.
 
 * In a Pull Request for the release:
 
-  * Update `RELEASE_NOTES.rst </RELEASE_NOTES.rst>`_ with changes.
+  * Update `RELEASE_NOTES.rst
+    <https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst>`_
+    with changes. Main change at release time is to change "Unreleased" section
+    to ``1.2.3_ - yyyy/mm/dd`` and include a link at the bottom of the
+    document.
 
-  * Set version number in `setup.py </setup.py>` to ``1.2.3``.
+  * Set version number in `setup.py
+    <https://github.com/jamescooke/factory_djoy/blob/master/setup.py>` to
+    ``1.2.3``.
 
   * Ensure Pull Request is GREEN, then merge.
 
