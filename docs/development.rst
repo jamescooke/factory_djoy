@@ -204,6 +204,7 @@ like ``1.2.3``.
     .. code-block:: sh
 
         $ make test-upload
+
         $ deactive
         $ virtualenv /tmp/tenv
         $ . /tmp/tenv/bin/activate
@@ -224,9 +225,11 @@ like ``1.2.3``.
 
 All done.
 
-Checks:
+Post release:
 
 * Ensure that link in `release notes`_ to the new diff works OK on GitHub.
+
+* Set default RTD documentation version as the new release.
 
 
 Helper recipes
