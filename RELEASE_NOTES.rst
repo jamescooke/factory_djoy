@@ -6,8 +6,8 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_ and
 this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-Unreleased
-----------
+0.6.0_ - 2016/11/20
+-------------------
 
 Added
 :::::
@@ -44,5 +44,6 @@ Added
 
 Stable testing release.
 
+.. _0.6.0: https://github.com/jamescooke/factory_djoy/compare/v0.5.0...v0.6.0
 .. _0.5.0: https://github.com/jamescooke/factory_djoy/compare/v0.4...v0.5.0
 .. _0.4: https://github.com/jamescooke/factory_djoy/compare/v0.3...v0.4
