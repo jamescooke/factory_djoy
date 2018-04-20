@@ -54,7 +54,7 @@ For each version of Django tested, a default project and app exist in the
 This structure has the following features:
 
 * ``test_framework`` contains a folder for each version of Django. For example,
-  the Django 1.9 project is in the ``test_framework/django19`` folder.
+  the Django 1.11 project is in the ``test_framework/django111`` folder.
 
 * Every project is created with the default ``django-admin startproject``
   command.
@@ -122,13 +122,13 @@ In order to add a version of Django to the test run:
   folder already exists. All ``django*`` folders can be removed with ``make
   clean`` - they can be rebuilt again identically with the ``build`` recipe.
 
-* Add a requirements file for the new version of Django. For version ``1.10``:
+* Add a requirements file for the new version of Django. For version ``1.11``:
 
 .. code-block:: sh
 
       $ cd test_framework/requirements
-      $ cat > django110.in
-      $ Django>=1.10,<1.11^D
+      $ cat > django111.in
+      Django>=1.11,<2^D
       $ make all
 
 * Add the new Django version to ``tox.ini``. (There's probably a better DRYer
