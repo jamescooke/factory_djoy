@@ -1,19 +1,31 @@
 import os
-import setuptools
+from setuptools import setup, find_packages
+
+basedir = os.path.dirname(__file__)
+
+def readme():
+    with open(os.path.join(basedir, 'README.rst')) as f:
+        return f.read()
 
 
-setuptools.setup(
-    name='factory_djoy',
-    version='0.6.0',
+about = {}
+with open(os.path.join(basedir, 'factory_djoy', '__about__.py')) as f:
+    exec(f.read(), about)
 
-    description='Factories for Django, creating valid instances every time',
+
+setup(
+    name=about['__name__'],
+    version=about['__version__'],
+
+    description=about['__description__'],
+    long_description=readme(),
     url='http://github.com/jamescooke/factory_djoy',
-    author='James Cooke',
-    author_email='github@jamescooke.info',
+    author=about['__author__'],
+    author_email=about['__email__'],
 
     license='MIT',
 
-    packages=setuptools.find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
+    packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
         'Django>=1.11',
         'factory_boy>=2.7',

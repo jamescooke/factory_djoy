@@ -19,7 +19,7 @@
     :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
 Factory Djoy
-::::::::::::
+============
 
 Simple wrappers around Factory Boy for Django which call ``full_clean`` when
 creating instances to ensure that only valid data enters your Django database.
@@ -34,7 +34,7 @@ Compatible with:
 
 
 Resources
-=========
+---------
 
 * `Documentation on ReadTheDocs <https://factory-djoy.readthedocs.io/>`_
 
@@ -43,3 +43,5 @@ Resources
 * `Source code on GitHub <https://github.com/jamescooke/factory_djoy>`_
 
 * `Licensed on MIT <https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE>`_
+
+* `Changelog <https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst>`_
