@@ -172,14 +172,9 @@ like ``1.2.3``.
 
 * In a Pull Request for the release:
 
-  * Update RELEASE_NOTES.rst_
-    with changes. Main change at release time is to change "Unreleased" section
-    to ``1.2.3_ - yyyy/mm/dd`` and include a link at the bottom of the
-    document.
+  * Update RELEASE_NOTES.rst_ with changes.
 
-  * Set version number in `setup.py
-    <https://github.com/jamescooke/factory_djoy/blob/master/setup.py>` to
-    ``1.2.3``.
+  * Set version number in ``factory_djoy/__about__.py``
 
   * Ensure Pull Request is GREEN, then merge.
 
@@ -228,8 +223,6 @@ All done.
 Post release:
 
 * Ensure that link in `release notes`_ to the new diff works OK on GitHub.
-
-* Set default RTD documentation version as the new release.
 
 
 Helper recipes

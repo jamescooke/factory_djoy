@@ -12,6 +12,9 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+1.0.0_ - 2018/04/20
+-------------------
+
 Added
 :::::
 
@@ -62,7 +65,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v0.6.0...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v1.0.0...HEAD
+.. _1.0.0: https://github.com/jamescooke/factory_djoy/compare/v0.6.0...v1.0.0
 .. _0.6.0: https://github.com/jamescooke/factory_djoy/compare/v0.5.0...v0.6.0
 .. _0.5.0: https://github.com/jamescooke/factory_djoy/compare/v0.4...v0.5.0
 .. _0.4: https://github.com/jamescooke/factory_djoy/compare/v0.3...v0.4
