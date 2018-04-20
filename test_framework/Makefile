@@ -9,7 +9,7 @@ venv:
 	. venv/bin/activate && pip install -U pip
 
 install:
-	pip install -r requirements/django110.txt
+	pip install -r requirements/django111.txt
 	pip install -r requirements/local.txt
 	pip install -e ..
 
