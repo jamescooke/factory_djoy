@@ -15,9 +15,8 @@ setuptools.setup(
 
     packages=setuptools.find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
-        'Django>=1.8',
+        'Django>=1.11',
         'factory_boy>=2.7',
-        'six>=1.10',
     ],
 
     classifiers=[
@@ -30,8 +29,8 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Testing',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],

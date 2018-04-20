@@ -6,6 +6,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_ and
 this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+Unreleased_
+-----------
+
+See also `latest documentation
+<http://factory-djoy.readthedocs.io/en/latest/>`_.
+
+Added
+:::::
+
+* Support Django 1.11 and Python 3.6.
+
+Removed
+:::::::
+
+* Support for unsupported versions of Django 1.8, 1.9, 1.10.
+
+* Support for Python 3.4.
+
 0.6.0_ - 2016/11/20
 -------------------
 
@@ -44,6 +62,7 @@ Added
 
 Stable testing release.
 
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v0.6.0...HEAD
 .. _0.6.0: https://github.com/jamescooke/factory_djoy/compare/v0.5.0...v0.6.0
 .. _0.5.0: https://github.com/jamescooke/factory_djoy/compare/v0.4...v0.5.0
 .. _0.4: https://github.com/jamescooke/factory_djoy/compare/v0.3...v0.4
