@@ -1,7 +1,7 @@
 Welcome to factory_djoy's documentation
 =======================================
 
-.. include: ../README.rst
+.. include:: ../README.rst
 
 
 Contents
