@@ -1,12 +1,25 @@
+.. image:: https://circleci.com/gh/jamescooke/factory_djoy.svg?style=shield
+    :alt: CircleCI build
+    :target: https://circleci.com/gh/jamescooke/factory_djoy
+
+.. image:: https://img.shields.io/readthedocs/factory-djoy.svg
+    :alt: Read the Docs
+    :target: https://factory-djoy.readthedocs.io/
+
+.. image:: https://img.shields.io/pypi/v/factory_djoy.svg
+    :alt: PyPI version
+    :target: https://pypi.org/project/factory_djoy/
+
+.. image:: https://img.shields.io/pypi/pyversions/factory_djoy.svg
+    :alt: Python version
+    :target: https://pypi.org/project/factory_djoy/
+
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :alt: factory_djoy is licensed under the MIT License
+    :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
+
 Factory Djoy
 ::::::::::::
-
-.. image:: https://circleci.com/gh/jamescooke/factory_djoy.svg?style=shield
-    :target: https://circleci.com/gh/jamescooke/factory_djoy
-.. image:: https://img.shields.io/pypi/pyversions/factory_djoy.svg?maxAge=2592000
-    :target: https://pypi.python.org/pypi/factory_djoy
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg
-    :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
 Simple wrappers around Factory Boy for Django which call ``full_clean`` when
 creating instances to ensure that only valid data enters your Django database.
