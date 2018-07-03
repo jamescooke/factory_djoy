@@ -12,8 +12,9 @@ class TestModels(TestCase):
         """
         inst = Item(name='test')
 
-        inst.save()
+        result = inst.save()
 
+        self.assertIs(result, None)
         self.assertEqual(Item.objects.count(), 1)
         self.assertEqual(inst, Item.objects.first())
 

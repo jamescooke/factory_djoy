@@ -118,7 +118,7 @@ class TestItemFactory(TestCase):
         """
         ItemFactory can generate multiple items
         """
-        ItemFactory.create_batch(2)
+        ItemFactory.create_batch(2)  # act
 
         self.assertEqual(Item.objects.count(), 2)
 

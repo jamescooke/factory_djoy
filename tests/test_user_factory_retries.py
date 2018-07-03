@@ -72,6 +72,6 @@ class TestUniqueUsername(unittest.TestCase):
         """
         unique_username_gen = unique_username()
 
-        unique_usernames = {next(unique_username_gen) for _ in range(2000)}
+        result = {next(unique_username_gen) for _ in range(2000)}
 
-        self.assertEqual(len(unique_usernames), 2000)
+        self.assertEqual(len(result), 2000)

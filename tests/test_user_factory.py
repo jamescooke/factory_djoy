@@ -38,7 +38,7 @@ class TestUserFactory(TestCase):
 
         Only username is unique between instances.
         """
-        UserFactory.create_batch(2)
+        UserFactory.create_batch(2)  # act
 
         self.assertEqual(self.user_model.objects.count(), 2)
         user_first = self.user_model.objects.first()
@@ -51,7 +51,7 @@ class TestUserFactory(TestCase):
 
         For all generated users, assert that they are valid after creation
         """
-        UserFactory.create_batch(1000)
+        UserFactory.create_batch(1000)  # act
 
         self.assertEqual(self.user_model.objects.count(), 1000)
         for user in self.user_model.objects.all():
@@ -61,7 +61,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can be passed a custom password and sets it
         """
-        UserFactory(password='custom$password')
+        UserFactory(password='custom$password')  # act
 
         user = self.user_model.objects.first()
         self.assertTrue(user.check_password('custom$password'))
@@ -70,7 +70,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can create a user with an unusable password
         """
-        UserFactory(password=None)
+        UserFactory(password=None)  # act
 
         user = self.user_model.objects.first()
         self.assertFalse(user.has_usable_password())
@@ -80,7 +80,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can create user without email address
         """
-        UserFactory(email='')
+        UserFactory(email='')  # act
 
         user = self.user_model.objects.first()
         self.assertEqual(user.email, '')
@@ -89,7 +89,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can create inactive user
         """
-        UserFactory(is_active=False)
+        UserFactory(is_active=False)  # act
 
         user = self.user_model.objects.first()
         self.assertFalse(user.is_active)
@@ -98,7 +98,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can create staff user
         """
-        UserFactory(is_staff=True)
+        UserFactory(is_staff=True)  # act
 
         user = self.user_model.objects.first()
         self.assertTrue(user.is_staff)
@@ -107,7 +107,7 @@ class TestUserFactory(TestCase):
         """
         UserFactory can create superuser user
         """
-        UserFactory(is_superuser=True)
+        UserFactory(is_superuser=True)  # act
 
         user = self.user_model.objects.first()
         self.assertTrue(user.is_superuser)
