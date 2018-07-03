@@ -147,14 +147,14 @@ class TestUserFactory(TestCase):
 
     # Invalidation cases
 
-    def test_fail_integrity(self):
+    def test_fail_integrity(self):  # noqa
         """
         UserFactory will raise IntegrityError saving to DB with missing field
         """
         with self.assertRaises(IntegrityError):
             UserFactory(first_name=None)
 
-    def test_fail_validation_first_name(self):
+    def test_fail_validation_first_name(self):  # noqa
         """
         UserFactory with first name too long will fail validation
 
@@ -165,7 +165,7 @@ class TestUserFactory(TestCase):
 
         self.assertEqual(list(cm.exception.error_dict), ['first_name'])
 
-    def test_fail_validation_last_name(self):
+    def test_fail_validation_last_name(self):  # noqa
         """
         UserFactory with last name too long will fail validation
 
@@ -176,7 +176,7 @@ class TestUserFactory(TestCase):
 
         self.assertEqual(list(cm.exception.error_dict), ['last_name'])
 
-    def test_fail_validation_username(self):
+    def test_fail_validation_username(self):  # noqa
         """
         UserFactory will fail with invalid username
         """
@@ -185,7 +185,7 @@ class TestUserFactory(TestCase):
 
         self.assertEqual(list(cm.exception.error_dict), ['username'])
 
-    def test_fail_username_override(self):
+    def test_fail_username_override(self):  # noqa
         """
         UserFactory will raise IntegrityError when username is collided
         """

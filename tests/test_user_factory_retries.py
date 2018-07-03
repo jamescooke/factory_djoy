@@ -44,7 +44,7 @@ class TestUserFactoryRetries(TestCase):
 
         self.assertEqual(result.username, 'vporter')
 
-    def test_retry_cap(self):
+    def test_retry_cap(self):  # noqa
         """
         UserFactory will only retry 200 times, then raises RuntimeError
         """
