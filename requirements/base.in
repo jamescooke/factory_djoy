@@ -2,6 +2,7 @@ bandit
 check-manifest
 docutils
 flake8
+flake8-aaa
 isort
 pip-tools
 sphinx

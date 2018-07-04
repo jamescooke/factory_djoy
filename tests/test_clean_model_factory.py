@@ -68,7 +68,7 @@ class TestSimpleItemFactory(TestCase):
         self.assertIsNone(result)
         self.assertEqual(Item.objects.count(), 1)
 
-    def test_happy_build_not_clean(self):
+    def test_happy_build_not_clean(self):  # noqa
         """
         SimpleItemFactory can be built with invalid data, can not full clean
         """
@@ -82,7 +82,7 @@ class TestSimpleItemFactory(TestCase):
 
     # Invalidation cases
 
-    def test_missing_name(self):
+    def test_missing_name(self):  # noqa
         """
         SimpleItemFactory does not autogenerate name and so fails validation
         """
@@ -91,7 +91,7 @@ class TestSimpleItemFactory(TestCase):
 
         self.assertEqual(['name'], list(cm.exception.error_dict.keys()))
 
-    def test_no_get_or_create(self):
+    def test_no_get_or_create(self):  # noqa
         """
         CleanModelFactory does not provide get_or_create
         """
@@ -118,7 +118,7 @@ class TestItemFactory(TestCase):
         """
         ItemFactory can generate multiple items
         """
-        ItemFactory.create_batch(2)
+        ItemFactory.create_batch(2)  # act
 
         self.assertEqual(Item.objects.count(), 2)
 
@@ -134,7 +134,7 @@ class TestFixedItemFactory(TestCase):
         self.assertEqual(Item.objects.count(), 1)
         self.assertEqual(result, Item.objects.filter(name='thing').first())
 
-    def test_duplicate(self):
+    def test_duplicate(self):  # noqa
         """
         FixedItemFactory can not create batch because duplicate name values
         """
