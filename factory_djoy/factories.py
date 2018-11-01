@@ -1,5 +1,3 @@
-from six import advance_iterator
-
 from django.contrib.auth import get_user_model
 from factory import (
     LazyFunction,
@@ -9,6 +7,7 @@ from factory import (
 )
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
+from six import advance_iterator
 
 faker = FakerFactory.create(providers=[])
 max_retries = 200
