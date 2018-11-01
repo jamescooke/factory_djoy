@@ -3,5 +3,8 @@ python:
     - "2.7"
     - "3.5"
     - "3.6"
-install: make install
-script: make test
+install: pip install tox
+script:
+    - TOXENV=$(tox --listenvs | grep "py${TRAVIS_PYTHON_VERSION/./}-" | tr '\n' ',')
+    - export TOXENV
+    - tox
