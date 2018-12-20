@@ -6,64 +6,64 @@
 #
 alabaster==0.7.12         # via sphinx
 argh==0.26.2              # via sphinx-autobuild, watchdog
-asttokens==1.1.12         # via flake8-aaa
+asttokens==1.1.13         # via flake8-aaa
 babel==2.6.0              # via sphinx
 backports-abc==0.5        # via tornado
 bandit==1.5.1
 bleach==3.0.2             # via readme-renderer
-certifi==2018.10.15       # via requests
+certifi==2018.11.29       # via requests
 chardet==3.0.4            # via requests
 check-manifest==0.37
 click==7.0                # via pip-tools
 configparser==3.5.0       # via flake8
 docutils==0.14
 enum34==1.1.6             # via flake8
-filelock==3.0.9           # via tox
+filelock==3.0.10          # via tox
 flake8-aaa==0.4.0
 flake8==3.6.0
 futures==3.2.0            # via isort, tornado
 gitdb2==2.0.5             # via gitpython
 gitpython==2.1.11         # via bandit
-idna==2.7                 # via requests
+idna==2.8                 # via requests
 imagesize==1.1.0          # via sphinx
 isort==4.3.4
 jinja2==2.10              # via sphinx
-livereload==2.5.2         # via sphinx-autobuild
-markupsafe==1.0           # via jinja2
+livereload==2.6.0         # via sphinx-autobuild
+markupsafe==1.1.0         # via jinja2
 mccabe==0.6.1             # via flake8
 packaging==18.0           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
-pbr==5.1.0                # via stevedore
-pip-tools==3.1.0
+pbr==5.1.1                # via stevedore
+pip-tools==3.2.0
 pkginfo==1.4.2            # via twine
 pluggy==0.8.0             # via tox
 port-for==0.3.1           # via sphinx-autobuild
 py==1.7.0                 # via tox
 pycodestyle==2.4.0        # via flake8
 pyflakes==2.0.0           # via flake8
-pygments==2.2.0           # via readme-renderer, sphinx
+pygments==2.3.1           # via readme-renderer, sphinx
 pyparsing==2.3.0          # via packaging
 pytz==2018.7              # via babel
 pyyaml==3.13              # via bandit, sphinx-autobuild, watchdog
 readme-renderer==24.0     # via twine
 requests-toolbelt==0.8.0  # via twine
-requests==2.20.0          # via requests-toolbelt, sphinx, twine
+requests==2.21.0          # via requests-toolbelt, sphinx, twine
 singledispatch==3.4.0.3   # via tornado
-six==1.11.0               # via asttokens, bandit, bleach, livereload, packaging, pip-tools, readme-renderer, singledispatch, sphinx, stevedore, tox
+six==1.12.0               # via asttokens, bandit, bleach, livereload, packaging, pip-tools, readme-renderer, singledispatch, sphinx, stevedore, tox
 smmap2==2.0.5             # via gitdb2
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.2
-sphinx==1.8.1
+sphinx==1.8.2
 sphinxcontrib-websupport==1.1.0  # via sphinx
 stevedore==1.30.0         # via bandit
 toml==0.10.0              # via tox
 tornado==5.1.1            # via livereload, sphinx-autobuild
-tox==3.5.3
+tox==3.6.0
 tqdm==4.28.1              # via twine
 twine==1.12.1
 typing==3.6.6             # via sphinx
-urllib3==1.24             # via requests
+urllib3==1.24.1           # via requests
 virtualenv==16.1.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
