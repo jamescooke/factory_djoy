@@ -30,6 +30,7 @@ setup(
         'Django>=1.11',
         'factory_boy>=2.7',
     ],
+    python_requires='>=2.7',
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
