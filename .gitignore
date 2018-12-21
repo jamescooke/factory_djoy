@@ -2,7 +2,6 @@
 *.pyc
 __pycache__/
 venv/
-v2/
 
 # Building things
 *.egg-info
