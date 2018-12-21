@@ -46,7 +46,7 @@ test-install:
 
 .PHONY: upload
 upload:
-	twine upload dist/factory_djoy-*
+	twine upload --repository-url https://upload.pypi.org/legacy/ dist/factory_djoy-*
 
 .PHONY: requirements
 requirements:
