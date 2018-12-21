@@ -12,6 +12,14 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+1.0.2_ - 2018/12/21
+-------------------
+
+Added
+:::::
+
+* ``python_requires`` to help pip find the Python 2 version.
+
 1.0.1_ - 2018/12/20
 -------------------
 
@@ -75,7 +83,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v1.0.1...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v1.0.2...HEAD
+.. _1.0.2: https://github.com/jamescooke/factory_djoy/compare/v1.0.1...v1.0.2
 .. _1.0.1: https://github.com/jamescooke/factory_djoy/compare/v1.0.0...v1.0.1
 .. _1.0.0: https://github.com/jamescooke/factory_djoy/compare/v0.6.0...v1.0.0
 .. _0.6.0: https://github.com/jamescooke/factory_djoy/compare/v0.5.0...v0.6.0

@@ -1,5 +1,5 @@
 __name__ = 'factory_djoy'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 __author__ = 'James Cooke'
 __copyright__ = '2018, {}'.format(__author__)
