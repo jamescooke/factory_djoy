@@ -28,7 +28,7 @@ Compatible with:
 
 * Django 1.11.
 
-* Python 2.7, 3.5 and 3.6.
+* Python 3.6.
 
 * Factory Boy version 2.7 or greater.
 
