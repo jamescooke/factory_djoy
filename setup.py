@@ -34,14 +34,16 @@ setup(
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
+        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.1',
         'Framework :: Django',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Software Development :: Testing',
+        'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Software Development :: Testing',
     ],
 )
