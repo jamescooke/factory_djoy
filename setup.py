@@ -30,7 +30,7 @@ setup(
         'Django>=1.11',
         'factory_boy>=2.7',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.5',
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -41,6 +41,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',

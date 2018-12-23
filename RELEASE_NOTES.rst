@@ -15,7 +15,7 @@ See also `latest documentation
 Removed
 :::::::
 
-* Support for Pythons 2.7 and 3.5.
+* Support for Pythons 2.7.
 
 
 1.0.2_ - 2018/12/21
