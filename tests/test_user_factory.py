@@ -172,7 +172,7 @@ class TestUserFactory(TestCase):
         Django limits last names to 30 characters.
         """
         with self.assertRaises(ValidationError) as cm:
-            UserFactory(last_name=31*'a')
+            UserFactory(last_name=151*'a')
 
         self.assertEqual(list(cm.exception.error_dict), ['last_name'])
 

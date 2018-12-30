@@ -1,10 +1,5 @@
 from django.contrib.auth import get_user_model
-from factory import (
-    LazyFunction,
-    PostGenerationMethodCall,
-    lazy_attribute,
-    post_generation,
-)
+from factory import LazyFunction, PostGenerationMethodCall, lazy_attribute, post_generation
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
 from six import advance_iterator

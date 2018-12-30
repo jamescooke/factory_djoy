@@ -12,10 +12,15 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Added
+:::::
+
+* Explicit support for Django 2.1.
+
 Removed
 :::::::
 
-* Support for Pythons 2.7 and 3.5.
+* Support for Pythons 2.7.
 
 
 1.0.2_ - 2018/12/21
