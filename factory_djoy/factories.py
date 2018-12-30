@@ -1,8 +1,9 @@
+from typing import Generator
+
 from django.contrib.auth import get_user_model
 from factory import LazyFunction, PostGenerationMethodCall, lazy_attribute, post_generation
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
-from six import advance_iterator
 
 faker = FakerFactory.create(providers=[])
 max_retries = 200
@@ -56,7 +57,7 @@ class UserFactory(DjangoModelFactory):
         unique_usernames = unique_username()
         non_uniques = set()
         for _ in range(max_retries):
-            username = advance_iterator(unique_usernames)
+            username = next(unique_usernames)
             username_unique = (
                 username not in non_uniques and
                 get_user_model().objects.filter(username=username).count() == 0
@@ -88,9 +89,9 @@ class UserFactory(DjangoModelFactory):
             self.full_clean()
 
 
-def unique_username():
+def unique_username() -> Generator[None, str, None]:
     """
-    Generate a unique username. Keeps a set of previously generated usern
+    Generate a unique username. Keeps a set of previously generated usernames
     """
     used = set()
     while(True):
