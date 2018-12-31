@@ -28,7 +28,7 @@ setup(
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
         'Django>=1.11',
-        'factory_boy>=2.7',
+        'factory_boy>=2.11',
     ],
     python_requires='>=3.5',
 
