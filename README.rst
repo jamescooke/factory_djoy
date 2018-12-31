@@ -30,7 +30,7 @@ Compatible with:
 
 * Python 3 (3.5, 3.6, 3.7)
 
-* Factory Boy version 2.7 or greater.
+* Factory Boy version 2.11 or greater.
 
 
 Resources
