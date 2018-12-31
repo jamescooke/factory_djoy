@@ -12,6 +12,9 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.0.0_ - 2018/12/31
+-------------------
+
 Added
 :::::
 
@@ -22,7 +25,7 @@ Added
 Removed
 :::::::
 
-* Support for Pythons 2.7.
+* Support for Python 2.7.
 
 
 1.0.2_ - 2018/12/21
@@ -96,7 +99,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v1.0.2...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.0.0...HEAD
+.. _2.0.0: https://github.com/jamescooke/factory_djoy/compare/v1.0.2...v2.0.0
 .. _1.0.2: https://github.com/jamescooke/factory_djoy/compare/v1.0.1...v1.0.2
 .. _1.0.1: https://github.com/jamescooke/factory_djoy/compare/v1.0.0...v1.0.1
 .. _1.0.0: https://github.com/jamescooke/factory_djoy/compare/v0.6.0...v1.0.0
