@@ -26,9 +26,9 @@ creating instances to ensure that only valid data enters your Django database.
 
 Compatible with:
 
-* Django 1.11.
+* Django 1.11 and 2.1.
 
-* Python 3.6.
+* Python 3 (3.5, 3.6, 3.7)
 
 * Factory Boy version 2.7 or greater.
 

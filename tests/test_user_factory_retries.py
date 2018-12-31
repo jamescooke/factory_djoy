@@ -6,10 +6,7 @@ from django.test import TestCase
 from factory_djoy import UserFactory
 from factory_djoy.factories import unique_username
 
-try:
-    from unittest.mock import patch
-except ImportError:
-    from mock import patch
+from unittest.mock import patch
 
 
 class TestUserFactoryRetries(TestCase):
@@ -18,15 +15,15 @@ class TestUserFactoryRetries(TestCase):
 
     def setUp(self):
         super(TestUserFactoryRetries, self).setUp()
-        patcher = patch('factory_djoy.factories.advance_iterator')
-        self.m_advance_iterator = patcher.start()
+        patcher = patch('factory_djoy.factories.unique_username')
+        self.m_unique_username = patcher.start()
         self.addCleanup(patcher.stop)
 
     def test_set_up(self):
         """
         setUp: Faker has been seeded, creates Users with the same username
         """
-        self.m_advance_iterator.side_effect = ('zbeard', 'vporter', 'frobinson')
+        self.m_unique_username.return_value = (x for x in ('zbeard', 'vporter', 'frobinson'))
 
         result = [UserFactory(), UserFactory(), UserFactory()]
 
@@ -37,7 +34,7 @@ class TestUserFactoryRetries(TestCase):
         """
         UserFactory retries username generation in case of collision
         """
-        self.m_advance_iterator.side_effect = ('zbeard', 'vporter')
+        self.m_unique_username.return_value = (x for x in ('zbeard', 'vporter'))
         self.model.objects.create(username='zbeard')
 
         result = UserFactory()
@@ -50,7 +47,7 @@ class TestUserFactoryRetries(TestCase):
         """
         profile_values = ('zbeard',) * 200
         profile_values += (ValueError('201st call'),)
-        self.m_advance_iterator.side_effect = profile_values
+        self.m_unique_username.return_value = (x for x in profile_values)
         self.model.objects.create(username='zbeard')
 
         with self.assertRaises(RuntimeError) as cm:

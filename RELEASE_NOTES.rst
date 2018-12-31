@@ -17,6 +17,8 @@ Added
 
 * Explicit support for Django 2.1.
 
+* Explicit support for Python 3.7.
+
 Removed
 :::::::
 
