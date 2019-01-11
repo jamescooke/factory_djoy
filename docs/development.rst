@@ -203,7 +203,7 @@ like ``1.2.3``.
         $ deactive
         $ virtualenv /tmp/tenv
         $ . /tmp/tenv/bin/activate
-        $ test-install
+        $ make test-install
 
   * Tag release branch and push it:
 

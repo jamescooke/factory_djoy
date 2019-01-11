@@ -9,7 +9,7 @@ argh==0.26.2              # via sphinx-autobuild, watchdog
 asttokens==1.1.13         # via flake8-aaa
 babel==2.6.0              # via sphinx
 bandit==1.5.1
-bleach==3.0.2             # via readme-renderer
+bleach==3.1.0             # via readme-renderer
 certifi==2018.11.29       # via requests
 chardet==3.0.4            # via requests
 check-manifest==0.37
@@ -31,16 +31,16 @@ packaging==18.0           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
 pbr==5.1.1                # via stevedore
 pip-tools==3.2.0
-pkginfo==1.4.2            # via twine
-pluggy==0.8.0             # via tox
+pkginfo==1.5.0.1          # via twine
+pluggy==0.8.1             # via tox
 port_for==0.3.1           # via sphinx-autobuild
 py==1.7.0                 # via tox
 pycodestyle==2.4.0        # via flake8
 pyflakes==2.0.0           # via flake8
 pygments==2.3.1           # via readme-renderer, sphinx
 pyparsing==2.3.0          # via packaging
-pytz==2018.7              # via babel
-pyyaml==3.13              # via bandit, sphinx-autobuild, watchdog
+pytz==2018.9              # via babel
+pyyaml==4.2b4
 readme-renderer==24.0     # via twine
 requests-toolbelt==0.8.0  # via twine
 requests==2.21.0          # via requests-toolbelt, sphinx, twine
@@ -54,10 +54,10 @@ sphinxcontrib-websupport==1.1.0  # via sphinx
 stevedore==1.30.0         # via bandit
 toml==0.10.0              # via tox
 tornado==5.1.1            # via livereload, sphinx-autobuild
-tox==3.6.1
-tqdm==4.28.1              # via twine
+tox==3.7.0
+tqdm==4.29.0              # via twine
 twine==1.12.1
 urllib3==1.24.1           # via requests
-virtualenv==16.1.0        # via tox
+virtualenv==16.2.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
