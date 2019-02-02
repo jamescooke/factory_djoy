@@ -15,9 +15,10 @@ chardet==3.0.4            # via requests
 check-manifest==0.37
 click==7.0                # via pip-tools
 docutils==0.14
+entrypoints==0.3          # via flake8
 filelock==3.0.10          # via tox
-flake8-aaa==0.5.0
-flake8==3.6.0
+flake8-aaa==0.5.1
+flake8==3.7.4
 gitdb2==2.0.5             # via gitpython
 gitpython==2.1.11         # via bandit
 idna==2.8                 # via requests
@@ -27,22 +28,22 @@ jinja2==2.10              # via sphinx
 livereload==2.6.0         # via sphinx-autobuild
 markupsafe==1.1.0         # via jinja2
 mccabe==0.6.1             # via flake8
-packaging==18.0           # via sphinx
+packaging==19.0           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
-pbr==5.1.1                # via stevedore
-pip-tools==3.2.0
+pbr==5.1.2                # via stevedore
+pip-tools==3.3.2
 pkginfo==1.5.0.1          # via twine
 pluggy==0.8.1             # via tox
 port_for==0.3.1           # via sphinx-autobuild
 py==1.7.0                 # via tox
-pycodestyle==2.4.0        # via flake8
-pyflakes==2.0.0           # via flake8
+pycodestyle==2.5.0        # via flake8
+pyflakes==2.1.0           # via flake8
 pygments==2.3.1           # via readme-renderer, sphinx
-pyparsing==2.3.0          # via packaging
+pyparsing==2.3.1          # via packaging
 pytz==2018.9              # via babel
 pyyaml==4.2b4
 readme-renderer==24.0     # via twine
-requests-toolbelt==0.8.0  # via twine
+requests-toolbelt==0.9.1  # via twine
 requests==2.21.0          # via requests-toolbelt, sphinx, twine
 six==1.12.0               # via asttokens, bandit, bleach, livereload, packaging, pip-tools, readme-renderer, sphinx, stevedore, tox
 smmap2==2.0.5             # via gitdb2
@@ -55,9 +56,9 @@ stevedore==1.30.0         # via bandit
 toml==0.10.0              # via tox
 tornado==5.1.1            # via livereload, sphinx-autobuild
 tox==3.7.0
-tqdm==4.29.0              # via twine
+tqdm==4.30.0              # via twine
 twine==1.12.1
 urllib3==1.24.1           # via requests
-virtualenv==16.2.0        # via tox
+virtualenv==16.3.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach

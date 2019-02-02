@@ -4,5 +4,5 @@
 #
 #    pip-compile --output-file django21.txt django21.in
 #
-django==2.1.4
-pytz==2018.7              # via django
+django==2.1.5
+pytz==2018.9              # via django

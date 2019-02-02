@@ -6,24 +6,25 @@
 #
 backcall==0.1.0           # via ipython
 click==7.0                # via pip-tools
-decorator==4.3.0          # via ipython, traitlets
+decorator==4.3.2          # via ipython, traitlets
+entrypoints==0.3          # via flake8
 factory-boy==2.11.1
-faker==1.0.1              # via factory-boy
-flake8==3.6.0
+faker==1.0.2              # via factory-boy
+flake8==3.7.4
 ipdb==0.11
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.2.0
 isort==4.3.4
 jedi==0.13.2              # via ipython
 mccabe==0.6.1             # via flake8
-parso==0.3.1              # via jedi
+parso==0.3.2              # via jedi
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.5        # via ipython
-pip-tools==3.2.0
-prompt-toolkit==2.0.7     # via ipython
+pip-tools==3.3.2
+prompt-toolkit==2.0.8     # via ipython
 ptyprocess==0.6.0         # via pexpect
-pycodestyle==2.4.0        # via flake8
-pyflakes==2.0.0           # via flake8
+pycodestyle==2.5.0        # via flake8
+pyflakes==2.1.0           # via flake8
 pygments==2.3.1           # via ipython
 python-dateutil==2.7.5    # via faker
 six==1.12.0               # via faker, pip-tools, prompt-toolkit, python-dateutil, traitlets
