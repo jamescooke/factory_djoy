@@ -83,12 +83,19 @@ class TestSimpleItemFactory(TestCase):
 
     def test_missing_name(self):  # noqa
         """
-        SimpleItemFactory does not autogenerate name and so fails validation
+        SimpleItemFactory does not autogenerate name and so fails validation.
+        This is the main test for the outputting of the extra information in
+        RuntimeError.
         """
         with self.assertRaises(RuntimeError) as cm:
             SimpleItemFactory()
 
-        self.assertIn('  name: ""\n', str(cm.exception))
+        self.assertEqual(
+            str(cm.exception),
+            'Error building <class \'djoyapp.models.Item\'> with SimpleItemFactory.\n'
+            'Bad values:\n'
+            '  name: ""\n',
+        )
 
     def test_no_get_or_create(self):  # noqa
         """

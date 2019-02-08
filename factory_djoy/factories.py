@@ -32,7 +32,7 @@ class CleanModelFactory(DjangoModelFactory):
         try:
             obj.full_clean()
         except ValidationError as ve:
-            message = ''
+            message = 'Error building {} with {}.\nBad values:\n'.format(model_class.__name__, cls.__name__)
             for field in ve.error_dict.keys():
                 message += '  {}: "{}"\n'.format(field, getattr(obj, field))
             raise RuntimeError(message) from ve
