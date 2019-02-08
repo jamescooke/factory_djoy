@@ -1,8 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
-from factory.fuzzy import FuzzyText
-
 from djoyapp.models import Item
+from factory.fuzzy import FuzzyText
 from factory_djoy import CleanModelFactory
 
 
@@ -86,10 +85,10 @@ class TestSimpleItemFactory(TestCase):
         """
         SimpleItemFactory does not autogenerate name and so fails validation
         """
-        with self.assertRaises(ValidationError) as cm:
+        with self.assertRaises(RuntimeError) as cm:
             SimpleItemFactory()
 
-        self.assertEqual(['name'], list(cm.exception.error_dict.keys()))
+        self.assertIn('  name: ""\n', str(cm.exception))
 
     def test_no_get_or_create(self):  # noqa
         """
@@ -97,10 +96,20 @@ class TestSimpleItemFactory(TestCase):
         """
         SimpleItemFactoryGOC(name='exist')
 
-        with self.assertRaises(ValidationError):
+        with self.assertRaises(RuntimeError):
             SimpleItemFactory(name='exist')
 
         self.assertEqual(Item.objects.count(), 1)
+
+    def test_name_too_long(self):
+        """
+        When name is too long then information about the failing field is added
+        to the stack trace.
+        """
+        with self.assertRaises(RuntimeError) as cm:
+            SimpleItemFactory(name='__name__')
+
+        self.assertIn('  name: "__name__"\n', str(cm.exception))
 
 
 class TestItemFactory(TestCase):
@@ -138,10 +147,10 @@ class TestFixedItemFactory(TestCase):
         """
         FixedItemFactory can not create batch because duplicate name values
         """
-        with self.assertRaises(ValidationError) as cm:
+        with self.assertRaises(RuntimeError) as cm:
             FixedItemFactory.create_batch(2)
 
-        self.assertEqual(list(cm.exception.error_dict), ['name'])
+        self.assertIn('  name: "thing"\n', str(cm.exception))
 
     def test_happy_build_no_name(self):
         """

@@ -1,6 +1,7 @@
 from typing import Generator
 
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from factory import LazyFunction, PostGenerationMethodCall, lazy_attribute, post_generation
 from factory.django import DjangoModelFactory
 from faker.factory import Factory as FakerFactory
@@ -20,9 +21,21 @@ class CleanModelFactory(DjangoModelFactory):
     def _create(cls, model_class, *args, **kwargs):
         """
         Call `full_clean` on any created instance before saving
+
+        Returns:
+            model_class
+
+        Raises:
+            RuntimeError: Raised when validation fails on built model instance.
         """
         obj = model_class(*args, **kwargs)
-        obj.full_clean()
+        try:
+            obj.full_clean()
+        except ValidationError as ve:
+            message = ''
+            for field in ve.error_dict.keys():
+                message += '  {}: "{}"\n'.format(field, getattr(obj, field))
+            raise RuntimeError(message) from ve
         obj.save()
         return obj
 
