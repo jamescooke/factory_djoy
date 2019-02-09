@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db.models import Model
-from django.db.models.fields import CharField, EmailField
+from django.db.models.fields import CharField, EmailField, IntegerField
 
 
 class Item(Model):
@@ -14,7 +14,7 @@ class Material(Model):
     """
     Model used to check validation with multiple fields
     """
-    name = CharField()
+    name = CharField(max_length=64)
     strength = IntegerField()
 
     def clean(self):
