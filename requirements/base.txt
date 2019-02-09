@@ -18,7 +18,7 @@ docutils==0.14
 entrypoints==0.3          # via flake8
 filelock==3.0.10          # via tox
 flake8-aaa==0.5.1
-flake8==3.7.4
+flake8==3.7.5
 gitdb2==2.0.5             # via gitpython
 gitpython==2.1.11         # via bandit
 idna==2.8                 # via requests
@@ -50,15 +50,15 @@ smmap2==2.0.5             # via gitdb2
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.2
-sphinx==1.8.3
+sphinx==1.8.4
 sphinxcontrib-websupport==1.1.0  # via sphinx
 stevedore==1.30.0         # via bandit
 toml==0.10.0              # via tox
 tornado==5.1.1            # via livereload, sphinx-autobuild
 tox==3.7.0
-tqdm==4.30.0              # via twine
+tqdm==4.31.0              # via twine
 twine==1.12.1
 urllib3==1.24.1           # via requests
-virtualenv==16.3.0        # via tox
+virtualenv==16.4.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
