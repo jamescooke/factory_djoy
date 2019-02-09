@@ -15,7 +15,7 @@ class Material(Model):
     Model used to check validation with multiple fields
     """
     name = CharField(max_length=64)
-    strength = IntegerField()
+    strength = IntegerField(default=0, null=False)
 
     def clean(self):
         """

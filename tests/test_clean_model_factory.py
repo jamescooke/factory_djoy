@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
-from djoyapp.models import Item
+from djoyapp.models import Item, Material
 from factory.fuzzy import FuzzyText
 from factory_djoy import CleanModelFactory
 
@@ -30,6 +30,11 @@ class FixedItemFactory(CleanModelFactory):
         model = Item
 
     name = 'thing'
+
+
+class MaterialFactory(CleanModelFactory):
+    class Meta:
+        model = Material
 
 
 class TestSimpleItemFactory(TestCase):
@@ -170,3 +175,15 @@ class TestFixedItemFactory(TestCase):
         self.assertIsNone(result)
         self.assertEqual(Item.objects.filter(name='').count(), 1)
         self.assertEqual(item.name, '')
+
+
+class TestMaterialFactory(TestCase):
+
+    def test_make_single(self):
+        MaterialFactory(name='paper', strength=1)  # act
+
+    def test_error_all(self):
+        with self.assertRaises(RuntimeError) as cm:
+            MaterialFactory(name='feather', strength=200)
+
+        self.assertIn('  __all__: obj.clean() failed\n', str(cm.exception))
