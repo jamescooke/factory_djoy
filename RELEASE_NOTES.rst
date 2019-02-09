@@ -12,6 +12,12 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Added
+:::::
+
+* Expanded information in stack traces when ``CleanModelFactory`` fails to
+  create a valid instance because ``full_clean()`` failed.
+
 2.0.0_ - 2018/12/31
 -------------------
 
