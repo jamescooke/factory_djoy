@@ -35,7 +35,7 @@ Then we can create a clean factory for it using ``CleanModelFactory``:
             model = Item
 
 Now we haven't defined any default value for the ``name`` field, so if we use
-this factory with no keyword arguments then ``ValidationError`` is raised:
+this factory with no keyword arguments then ``RuntimeError`` is raised:
 
 .. code-block:: python
 
@@ -43,6 +43,14 @@ this factory with no keyword arguments then ``ValidationError`` is raised:
     Traceback (most recent call last):
     ...
     django.core.exceptions.ValidationError: {'name': ['This field cannot be blank.']}
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+    ...
+    RuntimeError: Error building <class 'yourapp.models.Item'> with SimpleItemFactory.
+    Bad values:
+      name: ""
 
 However, if we pass a valid name, then everything works OK:
 
@@ -98,7 +106,7 @@ declaration.
 
         name = 'thing'
 
-However, in this instance, you will receive ``ValidationErrors`` because
+However, in this instance, you will receive ``RuntimeError`` because
 ``name`` is expected to be unique.
 
 .. code-block:: python
@@ -107,6 +115,14 @@ However, in this instance, you will receive ``ValidationErrors`` because
     Traceback (most recent call last):
     ...
     django.core.exceptions.ValidationError: {'name': ['Item with this Name already exists.']}
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+    ...
+    RuntimeError: Error building <class 'yourapp.models.Item'> with FixedItemFactory.
+    Bad values:
+      name: "thing"
 
 ``full_clean`` is triggered only with the ``create`` strategy. Therefore using
 ``build`` followed by ``save`` can provide a way to emulate "bad" data in your
