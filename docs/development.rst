@@ -87,16 +87,14 @@ Versioning notes
   versions that are no longer supported.
 
 * The current version of Django in use at testing is compiled into each
-  ``django*.txt`` file using ``pip-compile`` invoked by ``make requirements``
-  in the ``test_framework`` folder.
+  ``django*.txt`` file.
 
-* To push all versions in the ``test_framework`` forwards:
+* To bump all package versions, the ``bump_reqs`` recipe can be used.
 
   .. code-block:: sh
 
-      $ cd test_framework/requirements
-      $ rm *.txt
-      $ make all
+      $ . venv/bin/activate
+      $ make bump_reqs
 
 
 Creating Django test projects for Django version
@@ -235,7 +233,8 @@ the ``Makefile`` in ``test_settings``):
 
 * ``upload``: Push generated distribution to PyPI.
 
-* ``requirements``: User ``pip-compile`` to compile all requirements.
+* ``bump_reqs``: Update all packages, commit updates to a new
+  ``auto/bump-requirements`` branch and push it to origin.
 
 * ``clean``: Remove all compiled Python files, distributions, etc.
 

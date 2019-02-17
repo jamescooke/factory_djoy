@@ -49,15 +49,15 @@ six==1.12.0               # via asttokens, bandit, bleach, livereload, packaging
 smmap2==2.0.5             # via gitdb2
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.7.1
-sphinx-rtd-theme==0.4.2
+sphinx-rtd-theme==0.4.3
 sphinx==1.8.4
 sphinxcontrib-websupport==1.1.0  # via sphinx
 stevedore==1.30.0         # via bandit
 toml==0.10.0              # via tox
 tornado==5.1.1            # via livereload, sphinx-autobuild
 tox==3.7.0
-tqdm==4.31.0              # via twine
-twine==1.12.1
+tqdm==4.31.1              # via twine
+twine==1.13.0
 urllib3==1.24.1           # via requests
 virtualenv==16.4.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
