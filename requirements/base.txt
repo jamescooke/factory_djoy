@@ -10,38 +10,38 @@ asttokens==1.1.13         # via flake8-aaa
 babel==2.6.0              # via sphinx
 bandit==1.5.1
 bleach==3.1.0             # via readme-renderer
-certifi==2018.11.29       # via requests
+certifi==2019.3.9         # via requests
 chardet==3.0.4            # via requests
 check-manifest==0.37
 click==7.0                # via pip-tools
 docutils==0.14
 entrypoints==0.3          # via flake8
 filelock==3.0.10          # via tox
-flake8-aaa==0.5.1
-flake8==3.7.5
+flake8-aaa==0.5.2
+flake8==3.7.7
 gitdb2==2.0.5             # via gitpython
 gitpython==2.1.11         # via bandit
 idna==2.8                 # via requests
 imagesize==1.1.0          # via sphinx
-isort==4.3.4
+isort==4.3.14
 jinja2==2.10              # via sphinx
 livereload==2.6.0         # via sphinx-autobuild
-markupsafe==1.1.0         # via jinja2
+markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8
 packaging==19.0           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
-pbr==5.1.2                # via stevedore
-pip-tools==3.3.2
+pbr==5.1.3                # via stevedore
+pip-tools==3.4.0
 pkginfo==1.5.0.1          # via twine
-pluggy==0.8.1             # via tox
+pluggy==0.9.0             # via tox
 port_for==0.3.1           # via sphinx-autobuild
-py==1.7.0                 # via tox
+py==1.8.0                 # via tox
 pycodestyle==2.5.0        # via flake8
-pyflakes==2.1.0           # via flake8
+pyflakes==2.1.1           # via flake8
 pygments==2.3.1           # via readme-renderer, sphinx
 pyparsing==2.3.1          # via packaging
 pytz==2018.9              # via babel
-pyyaml==4.2b4
+pyyaml==5.1b5
 readme-renderer==24.0     # via twine
 requests-toolbelt==0.9.1  # via twine
 requests==2.21.0          # via requests-toolbelt, sphinx, twine
@@ -50,15 +50,15 @@ smmap2==2.0.5             # via gitdb2
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.3
-sphinx==1.8.4
+sphinx==1.8.5
 sphinxcontrib-websupport==1.1.0  # via sphinx
-stevedore==1.30.0         # via bandit
+stevedore==1.30.1         # via bandit
 toml==0.10.0              # via tox
-tornado==5.1.1            # via livereload, sphinx-autobuild
+tornado==6.0.1            # via livereload, sphinx-autobuild
 tox==3.7.0
 tqdm==4.31.1              # via twine
 twine==1.13.0
 urllib3==1.24.1           # via requests
-virtualenv==16.4.0        # via tox
+virtualenv==16.4.3        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
