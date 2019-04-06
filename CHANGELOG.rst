@@ -1,5 +1,5 @@
-Release Notes
-=============
+Changelog
+=========
 
 All notable changes to this project will be documented in this file.
 
@@ -8,6 +8,11 @@ this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 Unreleased_
 -----------
+
+Added
+:::::
+
+* Django 2.2 now added to test framework.
 
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
