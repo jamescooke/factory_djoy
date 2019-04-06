@@ -26,7 +26,7 @@ creating instances to ensure that only valid data enters your Django database.
 
 Compatible with:
 
-* Django 1.11 and 2.1.
+* Django 1.11, 2.1 and 2.2.
 
 * Python 3 (3.5, 3.6, 3.7)
 
