@@ -170,7 +170,7 @@ like ``1.2.3``.
 
 * In a Pull Request for the release:
 
-  * Update RELEASE_NOTES.rst_ with changes.
+  * Update `CHANGELOG`_ with changes.
 
   * Set version number in ``factory_djoy/__about__.py``
 
@@ -220,7 +220,9 @@ All done.
 
 Post release:
 
-* Ensure that link in `release notes`_ to the new diff works OK on GitHub.
+* Ensure that link in `CHANGELOG`_ to the new diff works OK on GitHub.
+
+* Check new docs are built on RTD.
 
 
 Helper recipes
@@ -239,5 +241,4 @@ the ``Makefile`` in ``test_settings``):
 * ``clean``: Remove all compiled Python files, distributions, etc.
 
 
-.. _RELEASE_NOTES.rst: https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst
-.. _release notes: https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst
+.. _CHANGELOG: https://github.com/jamescooke/factory_djoy/blob/master/CHANGELOG.rst

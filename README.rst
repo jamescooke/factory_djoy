@@ -44,4 +44,4 @@ Resources
 
 * `Licensed on MIT <https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE>`_
 
-* `Changelog <https://github.com/jamescooke/factory_djoy/blob/master/RELEASE_NOTES.rst>`_
+* `Changelog <https://github.com/jamescooke/factory_djoy/blob/master/CHANGELOG.rst>`_
