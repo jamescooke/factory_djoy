@@ -4,5 +4,6 @@
 #
 #    pip-compile -v --output-file django22.txt django22.in
 #
-django==2.1.8
+django==2.2
 pytz==2018.9              # via django
+sqlparse==0.3.0           # via django
