@@ -9,16 +9,16 @@ click==7.0                # via pip-tools
 decorator==4.4.0          # via ipython, traitlets
 entrypoints==0.3          # via flake8
 factory-boy==2.11.1
-faker==1.0.4              # via factory-boy
+faker==1.0.5              # via factory-boy
 flake8==3.7.7
 ipdb==0.12
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.4.0
-isort==4.3.16
+isort==4.3.17
 jedi==0.13.3              # via ipython
 mccabe==0.6.1             # via flake8
 parso==0.4.0              # via jedi
-pexpect==4.6.0            # via ipython
+pexpect==4.7.0            # via ipython
 pickleshare==0.7.5        # via ipython
 pip-tools==3.6.0
 prompt-toolkit==2.0.9     # via ipython
