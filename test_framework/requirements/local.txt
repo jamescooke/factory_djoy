@@ -13,14 +13,14 @@ faker==1.0.5              # via factory-boy
 flake8==3.7.7
 ipdb==0.12
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.4.0
+ipython==7.5.0
 isort==4.3.17
 jedi==0.13.3              # via ipython
 mccabe==0.6.1             # via flake8
 parso==0.4.0              # via jedi
 pexpect==4.7.0            # via ipython
 pickleshare==0.7.5        # via ipython
-pip-tools==3.6.0
+pip-tools==3.6.1
 prompt-toolkit==2.0.9     # via ipython
 ptyprocess==0.6.0         # via pexpect
 pycodestyle==2.5.0        # via flake8
