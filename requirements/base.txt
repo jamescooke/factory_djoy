@@ -12,12 +12,12 @@ bandit==1.5.1
 bleach==3.1.0             # via readme-renderer
 certifi==2019.3.9         # via requests
 chardet==3.0.4            # via requests
-check-manifest==0.37
+check-manifest==0.38
 click==7.0                # via pip-tools
 docutils==0.14
 entrypoints==0.3          # via flake8
 filelock==3.0.10          # via tox
-flake8-aaa==0.5.2
+flake8-aaa==0.6.0
 flake8==3.7.7
 gitdb2==2.0.5             # via gitpython
 gitpython==2.1.11         # via bandit
@@ -30,8 +30,8 @@ markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8
 packaging==19.0           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
-pbr==5.1.3                # via stevedore
-pip-tools==3.6.0
+pbr==5.2.0                # via stevedore
+pip-tools==3.6.1
 pkginfo==1.5.0.1          # via twine
 pluggy==0.9.0             # via tox
 port_for==0.3.1           # via sphinx-autobuild
@@ -58,12 +58,12 @@ sphinxcontrib-jsmath==1.0.1  # via sphinx
 sphinxcontrib-qthelp==1.0.2  # via sphinx
 sphinxcontrib-serializinghtml==1.1.3  # via sphinx
 stevedore==1.30.1         # via bandit
-toml==0.10.0              # via tox
+toml==0.10.0              # via check-manifest, tox
 tornado==6.0.2            # via livereload, sphinx-autobuild
-tox==3.8.6
+tox==3.9.0
 tqdm==4.31.1              # via twine
 twine==1.13.0
-urllib3==1.24.1           # via requests
-virtualenv==16.4.3        # via tox
+urllib3==1.24.2           # via requests
+virtualenv==16.5.0        # via tox
 watchdog==0.9.0           # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
