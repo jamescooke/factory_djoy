@@ -12,6 +12,16 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.1.2_ - 2019/11/23
+-------------------
+
+Added
+:::::
+
+* Explicit support for Python 3.8 with Python 3.8 added to test framework.
+
+* Test runs extended to include Django 2.2 on Pythons 3.5 and 3.6.
+
 2.1.1_ - 2019/04/06
 -------------------
 
@@ -116,7 +126,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.1.1...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.1.2...HEAD
+.. _2.1.2: https://github.com/jamescooke/factory_djoy/compare/v2.1.1...v2.1.2
 .. _2.1.1: https://github.com/jamescooke/factory_djoy/compare/v2.1.0...v2.1.1
 .. _2.1.0: https://github.com/jamescooke/factory_djoy/compare/v2.0.0...v2.1.0
 .. _2.0.0: https://github.com/jamescooke/factory_djoy/compare/v1.0.2...v2.0.0
