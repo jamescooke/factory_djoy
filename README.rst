@@ -25,7 +25,7 @@
 Factory Djoy
 ============
 
-> Factories for Django, creating valid model instances every time.
+    Factories for Django, creating valid model instances every time.
 
 Factory Djoy provides two simple classes, ``UserFactory`` and
 ``CleanModelFactory``, which wrap Factory Boy. They call ``full_clean()`` when
