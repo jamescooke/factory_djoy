@@ -6,29 +6,41 @@
     :alt: Read the Docs
     :target: https://factory-djoy.readthedocs.io/
 
-.. image:: https://img.shields.io/pypi/v/factory_djoy.svg
+.. image:: https://img.shields.io/pypi/v/factory-djoy.svg
     :alt: PyPI version
-    :target: https://pypi.org/project/factory_djoy/
+    :target: https://pypi.org/project/factory-djoy/
 
-.. image:: https://img.shields.io/pypi/pyversions/factory_djoy.svg
+.. image:: https://img.shields.io/pypi/pyversions/factory-djoy.svg
     :alt: Python version
-    :target: https://pypi.org/project/factory_djoy/
+    :target: https://pypi.org/project/factory-djoy/
+
+.. image:: https://img.shields.io/pypi/djversions/factory-djoy
+    :alt: PyPI - Django Version
+    :target: https://pypi.org/project/factory-djoy/
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
-    :alt: factory_djoy is licensed under the MIT License
+    :alt: factory-djoy is licensed under the MIT License
     :target: https://raw.githubusercontent.com/jamescooke/factory_djoy/master/LICENSE
 
 Factory Djoy
 ============
 
-Simple wrappers around Factory Boy for Django which call ``full_clean`` when
-creating instances to ensure that only valid data enters your Django database.
+    Factories for Django, creating valid model instances every time.
 
-Compatible with:
+Factory Djoy provides two simple classes, ``UserFactory`` and
+``CleanModelFactory``, which wrap Factory Boy. They call ``full_clean()`` when
+creating Django model instances to ensure that only valid data enters your
+Django database.
+
+
+Compatibility
+-------------
+
+Factory Djoy is compatible with:
 
 * Django 1.11, 2.1 and 2.2.
 
-* Python 3 (3.5, 3.6, 3.7)
+* Python 3 (3.5, 3.6, 3.7, 3.8)
 
 * Factory Boy version 2.11 or greater.
 
