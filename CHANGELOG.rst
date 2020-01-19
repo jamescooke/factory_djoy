@@ -12,6 +12,20 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.1.3_ - 2020/01/19
+-------------------
+
+Added
+:::::
+
+* Explicit support for Django 3.0 . `#73
+  <https://github.com/jamescooke/factory_djoy/pull/73>`_
+
+Removed
+:::::::
+
+* Support for Django 2.1.
+
 2.1.2_ - 2019/11/23
 -------------------
 
@@ -126,7 +140,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.1.2...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.1.3...HEAD
+.. _2.1.3: https://github.com/jamescooke/factory_djoy/compare/v2.1.2...v2.1.3
 .. _2.1.2: https://github.com/jamescooke/factory_djoy/compare/v2.1.1...v2.1.2
 .. _2.1.1: https://github.com/jamescooke/factory_djoy/compare/v2.1.0...v2.1.1
 .. _2.1.0: https://github.com/jamescooke/factory_djoy/compare/v2.0.0...v2.1.0
