@@ -126,7 +126,8 @@ In order to add a version of Django to the test run:
 
       $ cd test_framework/requirements
       $ cat > django111.in
-      Django>=1.11,<2^D
+      Django>=1.11,<2
+      ^D
       $ make all
 
 * Add the new Django version to ``tox.ini``. (There's probably a better DRYer
