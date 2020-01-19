@@ -12,6 +12,17 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Added
+:::::
+
+* Explicit support for Django 3.0 . `#73
+  <https://github.com/jamescooke/factory_djoy/pull/73>`_
+
+Removed
+:::::::
+
+* Support for Django 2.1.
+
 2.1.2_ - 2019/11/23
 -------------------
 
