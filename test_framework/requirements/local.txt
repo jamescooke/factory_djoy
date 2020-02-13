@@ -13,15 +13,15 @@ faker==4.0.0              # via factory-boy
 flake8==3.7.9
 ipdb==0.12.3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.11.1
+ipython==7.12.0
 isort==4.3.21
-jedi==0.15.2              # via ipython
+jedi==0.16.0              # via ipython
 mccabe==0.6.1             # via flake8
-parso==0.5.2              # via jedi
-pexpect==4.7.0            # via ipython
+parso==0.6.1              # via jedi
+pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
-pip-tools==4.3.0
-prompt-toolkit==3.0.2     # via ipython
+pip-tools==4.4.1
+prompt-toolkit==3.0.3     # via ipython
 ptyprocess==0.6.0         # via pexpect
 pycodestyle==2.5.0        # via flake8
 pyflakes==2.1.1           # via flake8
