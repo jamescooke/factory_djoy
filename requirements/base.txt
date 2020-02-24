@@ -10,7 +10,7 @@ argh==0.26.2              # via sphinx-autobuild
 asttokens==2.0.3          # via flake8-aaa
 babel==2.8.0              # via sphinx
 bandit==1.6.2
-bleach==3.1.0             # via readme-renderer
+bleach==3.1.1             # via readme-renderer
 certifi==2019.11.28       # via requests
 cffi==1.14.0              # via cryptography
 chardet==3.0.4            # via requests
@@ -27,7 +27,6 @@ gitdb2==2.0.6             # via gitpython
 gitpython==3.0.7          # via bandit
 idna==2.8                 # via requests
 imagesize==1.2.0          # via sphinx
-importlib-metadata==1.5.0  # via keyring, pluggy, tox, twine, virtualenv
 isort==4.3.21
 jeepney==0.4.2            # via keyring, secretstorage
 jinja2==2.11.1            # via sphinx
@@ -76,7 +75,6 @@ urllib3==1.25.8           # via requests
 virtualenv==20.0.3        # via tox
 watchdog==0.10.2          # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
-zipp==2.2.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
