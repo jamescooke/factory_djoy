@@ -10,7 +10,7 @@ argh==0.26.2              # via sphinx-autobuild
 asttokens==2.0.3          # via flake8-aaa
 babel==2.8.0              # via sphinx
 bandit==1.6.2
-bleach==3.1.0             # via readme-renderer
+bleach==3.1.1             # via readme-renderer
 certifi==2019.11.28       # via requests
 cffi==1.14.0              # via cryptography
 chardet==3.0.4            # via requests
@@ -23,11 +23,12 @@ entrypoints==0.3          # via flake8
 filelock==3.0.12          # via tox, virtualenv
 flake8-aaa==0.7.1
 flake8==3.7.9
-gitdb2==2.0.6             # via gitpython
-gitpython==3.0.7          # via bandit
-idna==2.8                 # via requests
+gitdb==4.0.2              # via gitpython
+gitpython==3.1.0          # via bandit
+idna==2.9                 # via requests
 imagesize==1.2.0          # via sphinx
 importlib-metadata==1.5.0  # via keyring, pluggy, tox, twine, virtualenv
+importlib-resources==1.0.2  # via virtualenv
 isort==4.3.21
 jeepney==0.4.2            # via keyring, secretstorage
 jinja2==2.11.1            # via sphinx
@@ -38,7 +39,7 @@ mccabe==0.6.1             # via flake8
 packaging==20.1           # via sphinx, tox
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
 pbr==5.4.4                # via stevedore
-pip-tools==4.4.1
+pip-tools==4.5.0
 pkginfo==1.5.0.1          # via twine
 pluggy==0.13.1            # via tox
 port_for==0.3.1           # via sphinx-autobuild
@@ -52,31 +53,31 @@ pytz==2019.3              # via babel
 pyyaml==5.3
 readme-renderer==24.0     # via twine
 requests-toolbelt==0.9.1  # via twine
-requests==2.22.0          # via requests-toolbelt, sphinx, twine
+requests==2.23.0          # via requests-toolbelt, sphinx, twine
 secretstorage==3.1.2      # via keyring
 six==1.14.0               # via asttokens, bandit, bleach, cryptography, livereload, packaging, pip-tools, readme-renderer, stevedore, tox, virtualenv
-smmap2==2.0.5             # via gitdb2
+smmap==3.0.1              # via gitdb
 snowballstemmer==2.0.0    # via sphinx
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.3
-sphinx==2.4.1
+sphinx==2.4.3
 sphinxcontrib-applehelp==1.0.1  # via sphinx
 sphinxcontrib-devhelp==1.0.1  # via sphinx
-sphinxcontrib-htmlhelp==1.0.2  # via sphinx
+sphinxcontrib-htmlhelp==1.0.3  # via sphinx
 sphinxcontrib-jsmath==1.0.1  # via sphinx
 sphinxcontrib-qthelp==1.0.2  # via sphinx
 sphinxcontrib-serializinghtml==1.1.3  # via sphinx
 stevedore==1.32.0         # via bandit
 toml==0.10.0              # via check-manifest, tox
 tornado==6.0.3            # via livereload, sphinx-autobuild
-tox==3.14.4
-tqdm==4.42.1              # via twine
+tox==3.14.5
+tqdm==4.43.0              # via twine
 twine==3.1.1
 urllib3==1.25.8           # via requests
-virtualenv==20.0.3        # via tox
+virtualenv==20.0.5        # via tox
 watchdog==0.10.2          # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
-zipp==2.2.0               # via importlib-metadata
+zipp==3.0.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
