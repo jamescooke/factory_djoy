@@ -28,15 +28,14 @@ gitpython==3.1.0          # via bandit
 idna==2.9                 # via requests
 imagesize==1.2.0          # via sphinx
 importlib-metadata==1.5.0  # via keyring, pep517, pluggy, tox, twine, virtualenv
-importlib-resources==1.1.0  # via virtualenv
 isort==4.3.21             # via -r base.in
-jeepney==0.4.2            # via keyring, secretstorage
+jeepney==0.4.3            # via keyring, secretstorage
 jinja2==2.11.1            # via sphinx
 keyring==21.1.0           # via twine
 livereload==2.6.1         # via sphinx-autobuild
 markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8
-packaging==20.1           # via sphinx, tox
+packaging==20.3           # via sphinx, tox
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
 pbr==5.4.4                # via stevedore
 pep517==0.8.1             # via check-manifest
@@ -46,7 +45,7 @@ pluggy==0.13.1            # via tox
 port_for==0.3.1           # via sphinx-autobuild
 py==1.8.1                 # via tox
 pycodestyle==2.5.0        # via flake8
-pycparser==2.19           # via cffi
+pycparser==2.20           # via cffi
 pyflakes==2.1.1           # via flake8
 pygments==2.5.2           # via readme-renderer, sphinx
 pyparsing==2.4.6          # via packaging
@@ -61,7 +60,7 @@ smmap==3.0.1              # via gitdb
 snowballstemmer==2.0.0    # via sphinx
 sphinx-autobuild==0.7.1   # via -r base.in
 sphinx-rtd-theme==0.4.3   # via -r base.in
-sphinx==2.4.3             # via -r base.in, sphinx-rtd-theme
+sphinx==2.4.4             # via -r base.in, sphinx-rtd-theme
 sphinxcontrib-applehelp==1.0.2  # via sphinx
 sphinxcontrib-devhelp==1.0.2  # via sphinx
 sphinxcontrib-htmlhelp==1.0.3  # via sphinx
@@ -70,15 +69,15 @@ sphinxcontrib-qthelp==1.0.3  # via sphinx
 sphinxcontrib-serializinghtml==1.1.4  # via sphinx
 stevedore==1.32.0         # via bandit
 toml==0.10.0              # via check-manifest, pep517, tox
-tornado==6.0.3            # via livereload, sphinx-autobuild
+tornado==6.0.4            # via livereload, sphinx-autobuild
 tox==3.14.5               # via -r base.in
 tqdm==4.43.0              # via twine
 twine==3.1.1              # via -r base.in
 urllib3==1.25.8           # via requests
-virtualenv==20.0.7        # via tox
+virtualenv==20.0.8        # via tox
 watchdog==0.10.2          # via sphinx-autobuild
 webencodings==0.5.1       # via bleach
-zipp==3.0.0               # via importlib-metadata, importlib-resources, pep517
+zipp==3.1.0               # via importlib-metadata, pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
