@@ -21,7 +21,7 @@ parso==0.6.2              # via jedi
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 pip-tools==4.5.1          # via -r local.in
-prompt-toolkit==3.0.4     # via ipython
+prompt-toolkit==3.0.5     # via ipython
 ptyprocess==0.6.0         # via pexpect
 pycodestyle==2.5.0        # via flake8
 pyflakes==2.1.1           # via flake8
