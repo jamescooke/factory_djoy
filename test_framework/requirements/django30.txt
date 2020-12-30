@@ -6,5 +6,5 @@
 #
 asgiref==3.3.1            # via django
 django==3.0.11            # via -r django30.in
-pytz==2020.4              # via django
+pytz==2020.5              # via django
 sqlparse==0.4.1           # via django
