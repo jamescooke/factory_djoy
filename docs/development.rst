@@ -14,34 +14,34 @@ Clone the repository and drop in:
 
 .. code-block:: sh
 
-    $ git clone git@github.com:jamescooke/factory_djoy.git
-    $ cd factory_djoy
+    git clone git@github.com:jamescooke/factory_djoy.git
+    cd factory_djoy
 
 Create a virtual environment. This uses a bare call to ``virtualenv``, you
 might prefer to use ``workon``:
 
 .. code-block:: sh
 
-    $ make venv
+    make venv
 
 Activate the virtual environment and install requirements:
 
 .. code-block:: sh
 
-    $ . venv/bin/activate
-    $ make install
+    . venv/bin/activate
+    make install
 
 Run all tests using ``tox`` for all versions of Python and Django:
 
 .. code-block:: sh
 
-    $ make test
+    make test
 
-Circle will also run linting before the main test run:
+Travis will also run linting before the main test run:
 
 .. code-block:: sh
 
-    $ make lint
+    make lint
 
 
 Testing with real Django projects
@@ -93,8 +93,8 @@ Versioning notes
 
   .. code-block:: sh
 
-      $ . venv/bin/activate
-      $ make bump_reqs
+      . venv/bin/activate
+      make bump_reqs
 
 
 Creating Django test projects for Django version
@@ -106,15 +106,15 @@ In order to add a version of Django to the test run:
 
   .. code-block:: sh
 
-      $ pip install -U django
+      pip install -U django
 
 * Ask the new version of Django to create projects and all ``test_framework``
   structures:
 
   .. code-block:: sh
 
-      $ cd test_framework
-      $ make build
+      cd test_framework
+      make build
 
   Please note that creating a Django test project will fail if the target
   folder already exists. All ``django*`` folders can be removed with ``make
@@ -122,13 +122,19 @@ In order to add a version of Django to the test run:
 
 * Add a requirements file for the new version of Django. For version ``1.11``:
 
-.. code-block:: sh
+  .. code-block:: sh
 
-      $ cd test_framework/requirements
-      $ cat > django111.in
+      cd test_framework/requirements
+      cat > django111.in
+
+  .. code-block::
+
       Django>=1.11,<2
       ^D
-      $ make all
+
+  .. code-block:: sh
+
+      make all
 
 * Add the new Django version to ``tox.ini``. (There's probably a better DRYer
   way to complete this.)
@@ -148,10 +154,10 @@ the requirements:
 
 .. code-block:: sh
 
-    $ cd test_framework
-    $ make venv
-    $ . venv/bin/activate
-    $ make install
+    cd test_framework
+    make venv
+    . venv/bin/activate
+    make install
 
 The test framework means that all the tests can be run on the test models and
 factories using the standard ``manage.py`` test command. So, if working with
@@ -160,7 +166,7 @@ structure for that Django version, then all tests can be run with:
 
 .. code-block:: sh
 
-    $ make test
+    make test
 
 
 Release process
@@ -183,13 +189,13 @@ like ``1.2.3``.
 
     .. code-block:: sh
 
-        $ make lint test
+        make lint test
 
   * Clean out any old distributions and make new ones:
 
     .. code-block:: sh
 
-        $ make clean dist
+        make clean dist
 
   * Test upload with Test PyPI and follow it with an install direct from Test
     PyPI (might need to create a ``~/.pypirc`` file with settings for the test
@@ -197,25 +203,25 @@ like ``1.2.3``.
 
     .. code-block:: sh
 
-        $ make test-upload
+        make test-upload
 
-        $ deactive
-        $ virtualenv /tmp/tenv
-        $ . /tmp/tenv/bin/activate
-        $ make test-install
+        deactive
+        virtualenv /tmp/tenv
+        . /tmp/tenv/bin/activate
+        make test-install
 
   * Tag release branch and push it:
 
     .. code-block:: sh
 
-        $ git tag v1.2.3
-        $ git push origin --tags
+        git tag v1.2.3
+        git push origin --tags
 
   * Upload to PyPI:
 
     .. code-block:: sh
 
-        $ make upload
+        make upload
 
 All done.
 
