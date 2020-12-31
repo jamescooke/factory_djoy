@@ -158,10 +158,11 @@ class TestUserFactory(TestCase):
         """
         UserFactory with first name too long will fail validation
 
-        Django limits first names to 30 characters.
+        Before Django 3.1, first names were limited to 30 characters, 150 chars
+        afterwards.
         """
         with self.assertRaises(ValidationError) as cm:
-            UserFactory(first_name=31*'a')
+            UserFactory(first_name=151*'a')
 
         self.assertEqual(list(cm.exception.error_dict), ['first_name'])
 
