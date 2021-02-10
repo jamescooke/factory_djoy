@@ -5,6 +5,6 @@
 #    pip-compile --output-file=django31.txt django31.in
 #
 asgiref==3.3.1            # via django
-django==3.1.4             # via -r django31.in
-pytz==2020.5              # via django
+django==3.1.6             # via -r django31.in
+pytz==2021.1              # via django
 sqlparse==0.4.1           # via django
