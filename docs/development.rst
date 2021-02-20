@@ -147,7 +147,7 @@ Working locally
 
 If there are multiple tests to run this can become inefficient with ``tox``.
 Therefore, you can use the helper local environment configured inside
-``test_framework``. This installs Python 3.5 and latest Django.
+``test_framework``. This installs Python 3 and latest Django.
 
 Create a new virtual environment in the ``test_framework`` folder and install
 the requirements:

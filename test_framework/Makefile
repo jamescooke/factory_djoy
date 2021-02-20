@@ -4,7 +4,7 @@ app_folder = $(django_version)/djoyapp
 
 .PHONY: venv
 venv:
-	virtualenv venv --python=python3.5
+	virtualenv venv --python=python3
 	. venv/bin/activate && pip install -U pip
 
 .PHONY: install
