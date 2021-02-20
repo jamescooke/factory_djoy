@@ -1,12 +1,14 @@
 language: python
-dist: xenial
+dist: bionic
 sudo: true
 python:
     - "3.5"
     - "3.6"
     - "3.7"
     - "3.8"
-install: pip install tox
+install:
+    - "pip install -U pip"
+    - "pip install tox"
 script:
     - TOXENV=$(tox --listenvs | grep "py${TRAVIS_PYTHON_VERSION/./}-" | tr '\n' ',')
     - export TOXENV
