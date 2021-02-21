@@ -12,6 +12,11 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Removed
+:::::::
+
+* Support for Python 3.5.
+
 2.1.4_ - 2021/01/03
 -------------------
 
