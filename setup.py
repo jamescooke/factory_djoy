@@ -19,6 +19,7 @@ setup(
 
     description=about['__description__'],
     long_description=readme(),
+    long_description_content_type="test/x-rst",
     url='http://github.com/jamescooke/factory_djoy',
     author=about['__author__'],
     author_email=about['__email__'],

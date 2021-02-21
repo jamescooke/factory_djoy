@@ -34,8 +34,12 @@ isort:
 dist:
 	python setup.py sdist bdist_wheel
 
+.PHONY: dist-check
+dist-check:
+	twine check --strict dist/factory_djoy-*
+
 .PHONY: test-upload
-test-upload:
+test-upload: dist-check
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/factory_djoy-*
 
 # Need to manually install dependencies since they are not on test pypi
@@ -45,7 +49,7 @@ test-install:
 	pip install factory-djoy -i https://test.pypi.org/simple
 
 .PHONY: upload
-upload:
+upload: dist-check
 	twine upload --repository-url https://upload.pypi.org/legacy/ dist/factory_djoy-*
 
 .PHONY: requirements
