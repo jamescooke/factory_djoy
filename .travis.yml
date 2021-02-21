@@ -1,6 +1,6 @@
 language: python
+os: linux
 dist: bionic
-sudo: true
 python:
     - "3.6"
     - "3.7"
