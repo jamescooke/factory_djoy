@@ -1,12 +1,11 @@
 import unittest
+from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 from factory_djoy import UserFactory
 from factory_djoy.factories import unique_username
-
-from unittest.mock import patch
 
 
 class TestUserFactoryRetries(TestCase):

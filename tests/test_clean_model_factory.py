@@ -1,7 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
-from djoyapp.models import Item, Material
 from factory.fuzzy import FuzzyText
+
+from djoyapp.models import Item, Material
 from factory_djoy import CleanModelFactory
 
 

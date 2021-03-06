@@ -1,7 +1,9 @@
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 basedir = os.path.dirname(__file__)
+
 
 def readme():
     with open(os.path.join(basedir, 'README.rst')) as f:
