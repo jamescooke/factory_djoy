@@ -1,3 +1,5 @@
+lint_files=setup.py factory_djoy tests
+
 .PHONY: venv
 venv:
 	virtualenv venv --python=python3
@@ -16,19 +18,21 @@ test:
 	tox
 
 .PHONY: lint
-lint: flake8 isort
+lint: flake8 isort dist-check
 	bandit -r factory_djoy
-	python setup.py check --metadata --restructuredtext --strict
 
 .PHONY: flake8
 flake8:
-	flake8 factory_djoy
-	flake8 tests
+	flake8 $(lint_files)
 
 .PHONY: isort
 isort:
-	isort -rc --diff factory_djoy > isort.out
-	if [ "$$(wc -l isort.out)" != "0 isort.out" ]; then cat isort.out; exit 1; fi
+	isort --check --diff $(lint_files)
+
+.PHONY: fixlint
+fixlint:
+	@echo "=== fixing isort ==="
+	isort --quiet --recursive $(lint_files)
 
 .PHONY: dist
 dist:
