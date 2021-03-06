@@ -1,6 +1,7 @@
-.. image:: https://img.shields.io/circleci/project/github/jamescooke/factory_djoy/master.svg
-    :alt: CircleCI build
-    :target: https://circleci.com/gh/jamescooke/factory_djoy/tree/master
+
+.. image:: https://img.shields.io/github/workflow/status/jamescooke/factory_djoy/Build
+    :alt: GitHub Workflow Status
+    :target: https://github.com/jamescooke/factory_djoy/actions?query=branch%3Amaster
 
 .. image:: https://img.shields.io/readthedocs/factory-djoy.svg
     :alt: Read the Docs
