@@ -37,7 +37,7 @@ Run all tests using ``tox`` for all versions of Python and Django:
 
     make test
 
-Travis will also run linting before the main test run:
+CI will also run linting before the main test run:
 
 .. code-block:: sh
 
