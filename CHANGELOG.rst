@@ -12,7 +12,7 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
-2.2.0_ - 2021/02/21
+2.2.0_ - 2021/03/06
 -------------------
 
 Removed
@@ -20,6 +20,12 @@ Removed
 
 * Support for Python 3.5. `#98
   <https://github.com/jamescooke/factory_djoy/pull/98>`_
+
+Changed
+:::::::
+
+* CI moved from Travis to GitHub actions. `#101
+  <https://github.com/jamescooke/factory_djoy/pull/101>`_
 
 2.1.4_ - 2021/01/03
 -------------------
