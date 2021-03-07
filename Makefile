@@ -39,7 +39,7 @@ dist:
 	python setup.py sdist bdist_wheel
 
 .PHONY: dist-check
-dist-check:
+dist-check: dist
 	twine check --strict dist/factory_djoy-*
 
 .PHONY: test-upload
