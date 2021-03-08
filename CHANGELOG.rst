@@ -12,7 +12,7 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
-2.2.0_ - 2021/03/06
+2.2.0_ - 2021/03/08
 -------------------
 
 Removed
