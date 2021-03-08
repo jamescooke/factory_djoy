@@ -240,6 +240,9 @@ the ``Makefile`` in ``test_settings``):
 
 * ``dist``: Creates the distribution files.
 
+* ``dist-check``: Uses Twine to check the dist. Will be used to replace
+  ``setup.py check``.
+
 * ``upload``: Push generated distribution to PyPI.
 
 * ``bump_reqs``: Update all packages, commit updates to a new

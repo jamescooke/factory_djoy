@@ -1,3 +1,5 @@
+lint_files=setup.py factory_djoy tests
+
 .PHONY: venv
 venv:
 	virtualenv venv --python=python3
@@ -16,26 +18,32 @@ test:
 	tox
 
 .PHONY: lint
-lint: flake8 isort
+lint: flake8 isort dist-check
 	bandit -r factory_djoy
-	python setup.py check --metadata --restructuredtext --strict
 
 .PHONY: flake8
 flake8:
-	flake8 factory_djoy
-	flake8 tests
+	flake8 $(lint_files)
 
 .PHONY: isort
 isort:
-	isort -rc --diff factory_djoy > isort.out
-	if [ "$$(wc -l isort.out)" != "0 isort.out" ]; then cat isort.out; exit 1; fi
+	isort --check --diff $(lint_files)
+
+.PHONY: fixlint
+fixlint:
+	@echo "=== fixing isort ==="
+	isort --quiet --recursive $(lint_files)
 
 .PHONY: dist
 dist:
 	python setup.py sdist bdist_wheel
 
+.PHONY: dist-check
+dist-check: dist
+	twine check --strict dist/factory_djoy-*
+
 .PHONY: test-upload
-test-upload:
+test-upload: dist-check
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/factory_djoy-*
 
 # Need to manually install dependencies since they are not on test pypi
@@ -45,7 +53,7 @@ test-install:
 	pip install factory-djoy -i https://test.pypi.org/simple
 
 .PHONY: upload
-upload:
+upload: dist-check
 	twine upload --repository-url https://upload.pypi.org/legacy/ dist/factory_djoy-*
 
 .PHONY: requirements

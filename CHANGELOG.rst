@@ -12,10 +12,20 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.2.0_ - 2021/03/08
+-------------------
+
 Removed
 :::::::
 
-* Support for Python 3.5.
+* Support for Python 3.5. `#98
+  <https://github.com/jamescooke/factory_djoy/pull/98>`_
+
+Changed
+:::::::
+
+* CI moved from Travis to GitHub actions. `#101
+  <https://github.com/jamescooke/factory_djoy/pull/101>`_
 
 2.1.4_ - 2021/01/03
 -------------------
@@ -154,7 +164,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.1.4...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.2.0...HEAD
+.. _2.2.0: https://github.com/jamescooke/factory_djoy/compare/v2.1.4...v2.2.0
 .. _2.1.4: https://github.com/jamescooke/factory_djoy/compare/v2.1.3...v2.1.4
 .. _2.1.3: https://github.com/jamescooke/factory_djoy/compare/v2.1.2...v2.1.3
 .. _2.1.2: https://github.com/jamescooke/factory_djoy/compare/v2.1.1...v2.1.2

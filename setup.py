@@ -1,7 +1,9 @@
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 basedir = os.path.dirname(__file__)
+
 
 def readme():
     with open(os.path.join(basedir, 'README.rst')) as f:
@@ -19,6 +21,7 @@ setup(
 
     description=about['__description__'],
     long_description=readme(),
+    long_description_content_type="test/x-rst",
     url='http://github.com/jamescooke/factory_djoy',
     author=about['__author__'],
     author_email=about['__email__'],
