@@ -205,8 +205,8 @@ like ``1.2.3``.
 
         make test-upload
 
-        deactive
-        virtualenv /tmp/tenv
+        deactivate
+        virtualenv /tmp/tenv --python=python3.8
         . /tmp/tenv/bin/activate
         make test-install
 
