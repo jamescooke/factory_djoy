@@ -4,5 +4,7 @@
 #
 #    pip-compile --output-file=django111.txt django111.in
 #
-django==1.11.29           # via -r django111.in
-pytz==2021.1              # via django
+django==1.11.29
+    # via -r django111.in
+pytz==2021.1
+    # via django

@@ -4,6 +4,9 @@
 #
 #    pip-compile --output-file=django22.txt django22.in
 #
-django==2.2.18            # via -r django22.in
-pytz==2021.1              # via django
-sqlparse==0.4.1           # via django
+django==2.2.20
+    # via -r django22.in
+pytz==2021.1
+    # via django
+sqlparse==0.4.1
+    # via django
