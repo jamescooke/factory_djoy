@@ -60,17 +60,8 @@ imagesize==1.2.0
     # via sphinx
 importlib-metadata==3.10.0
     # via
-    #   build
-    #   flake8
     #   keyring
-    #   pep517
-    #   pluggy
-    #   stevedore
-    #   tox
     #   twine
-    #   virtualenv
-importlib-resources==5.1.2
-    # via virtualenv
 isort==5.8.0
     # via -r base.in
 jeepney==0.6.0
@@ -188,19 +179,14 @@ tqdm==4.60.0
     # via twine
 twine==3.4.1
     # via -r base.in
-typing-extensions==3.7.4.3
-    # via importlib-metadata
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
 virtualenv==20.4.3
     # via tox
 webencodings==0.5.1
     # via bleach
 zipp==3.4.1
-    # via
-    #   importlib-metadata
-    #   importlib-resources
-    #   pep517
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
