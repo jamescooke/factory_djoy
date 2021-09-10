@@ -10,7 +10,5 @@ django==3.1.8
     # via -r django31.in
 pytz==2021.1
     # via django
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via django
-typing-extensions==3.7.4.3
-    # via asgiref
