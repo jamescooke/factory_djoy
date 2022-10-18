@@ -1,13 +1,10 @@
-bandit
+bandit<1.7.2
 check-manifest
 docutils
-flake8
+flake8<4
 flake8-aaa
 isort
 pip-tools
-pyyaml>=4.2b1
-sphinx
-sphinx-autobuild
-sphinx_rtd_theme
+pyyaml
 tox
 twine
