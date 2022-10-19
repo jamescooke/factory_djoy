@@ -86,16 +86,6 @@ Versioning notes
 * The latest point release from each major Django version is used, excluding
   versions that are no longer supported.
 
-* The current version of Django in use at testing is compiled into each
-  ``django*.txt`` file.
-
-* To bump all package versions, the ``bump_reqs`` recipe can be used.
-
-  .. code-block:: sh
-
-      . venv/bin/activate
-      make bump_reqs
-
 
 Creating Django test projects for Django version
 ................................................
@@ -120,24 +110,12 @@ In order to add a version of Django to the test run:
   folder already exists. All ``django*`` folders can be removed with ``make
   clean`` - they can be rebuilt again identically with the ``build`` recipe.
 
-* Add a requirements file for the new version of Django. For version ``1.11``:
-
-  .. code-block:: sh
-
-      cd test_framework/requirements
-      cat > django111.in
-
-  .. code-block::
-
-      Django>=1.11,<2
-      ^D
-
-  .. code-block:: sh
-
-      make all
-
 * Add the new Django version to ``tox.ini``. (There's probably a better DRYer
   way to complete this.)
+
+  ::
+
+      django31: Django>=3.1,<3.2
 
 * Remember to add the new Django version to the README and do a release.
 

@@ -67,18 +67,3 @@ clean:
 	-rm -r dist
 	-rm -r .tox
 	find . -name '*.pyc' -delete
-
-.PHONY: on_master
-on_master:
-	./on_master.sh
-
-.PHONY: bump_reqs
-bump_reqs: on_master
-	git checkout -b auto/bump-requirements
-	rm -f requirements/base.txt
-	$(MAKE) -C requirements
-	rm test_framework/requirements/*.txt
-	cd test_framework && $(MAKE) -C requirements
-	git commit requirements/*.txt test_framework/requirements/*.txt \
-	    -m "Update requirements with $$(python --version)"
-	git push origin auto/bump-requirements
