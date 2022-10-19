@@ -110,7 +110,7 @@ def unique_username() -> Generator[None, str, None]:
     Generate a unique username. Keeps a set of previously generated usernames
     """
     used = set()
-    while(True):
+    while True:
         username = faker.user_name()
         if username not in used:
             used.add(username)
