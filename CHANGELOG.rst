@@ -12,6 +12,22 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.2.1_ - 2022/10/22
+-------------------
+
+Removed
+:::::::
+
+* Dropped support for Python 3.6. `#109
+  <https://github.com/jamescooke/factory_djoy/pull/109>`_
+
+* Dropped support for Django 1.11. `#97
+  <https://github.com/jamescooke/factory_djoy/issues/97>`_
+
+* Compiled requirements for Django versions removed, tox trusted to install
+  good versions. `#111
+  <https://github.com/jamescooke/factory_djoy/issues/111>`_
+
 2.2.0_ - 2021/03/08
 -------------------
 
