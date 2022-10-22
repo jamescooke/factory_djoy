@@ -1,38 +1,10 @@
-lint_files=setup.py factory_djoy tests
-
-.PHONY: venv
-venv:
-	virtualenv venv --python=python3
-	. venv/bin/activate && pip install -U pip
-
 .PHONY: install
 install:
-	pip install -r requirements/base.txt
-
-.PHONY: install2
-install2:
-	pip install -r requirements/base2.txt
+	pip install tox twine
 
 .PHONY: test
 test:
-	tox
-
-.PHONY: lint
-lint: flake8 isort dist-check
-	bandit -r factory_djoy
-
-.PHONY: flake8
-flake8:
-	flake8 $(lint_files)
-
-.PHONY: isort
-isort:
-	isort --check --diff $(lint_files)
-
-.PHONY: fixlint
-fixlint:
-	@echo "=== fixing isort ==="
-	isort --quiet --recursive $(lint_files)
+	tox -p auto
 
 .PHONY: dist
 dist:
