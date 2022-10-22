@@ -180,7 +180,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.2.0...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.2.1...HEAD
+.. _2.2.1: https://github.com/jamescooke/factory_djoy/compare/v2.2.0...v2.2.1
 .. _2.2.0: https://github.com/jamescooke/factory_djoy/compare/v2.1.4...v2.2.0
 .. _2.1.4: https://github.com/jamescooke/factory_djoy/compare/v2.1.3...v2.1.4
 .. _2.1.3: https://github.com/jamescooke/factory_djoy/compare/v2.1.2...v2.1.3
