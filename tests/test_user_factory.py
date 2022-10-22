@@ -47,13 +47,13 @@ class TestUserFactory(TestCase):
 
     def test_make_multi_large(self):
         """
-        UserFactory can generate 1000 users
+        UserFactory can generate 100 users
 
         For all generated users, assert that they are valid after creation
         """
-        UserFactory.create_batch(1000)  # act
+        UserFactory.create_batch(100)  # act
 
-        self.assertEqual(self.user_model.objects.count(), 1000)
+        self.assertEqual(self.user_model.objects.count(), 100)
         for user in self.user_model.objects.all():
             user.full_clean()
 
