@@ -1,10 +1,35 @@
+lint_files=setup.py factory_djoy tests
+
 .PHONY: install
 install:
-	pip install tox twine
+	pip install -U tox -U twine
 
 .PHONY: test
 test:
 	tox -p auto
+
+# --- LINT ---
+
+#  `make lint` used in tox 'lint' environment
+
+.PHONY: lint
+lint: flake8 isort dist-check
+	bandit -r factory_djoy
+
+.PHONY: flake8
+flake8:
+	flake8 $(lint_files)
+
+.PHONY: isort
+isort:
+	isort --check --diff $(lint_files)
+
+.PHONY: fixlint
+fixlint:
+	@echo "=== fixing isort ==="
+	isort --quiet --recursive $(lint_files)
+
+# --- PACKAGING ---
 
 .PHONY: dist
 dist:
