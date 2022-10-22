@@ -39,9 +39,9 @@ Compatibility
 
 Factory Djoy is compatible with:
 
-* Django 1.11, 2.2, 3.0 and 3.1
+* Django 2.2, 3.0 and 3.1
 
-* Python 3 (3.6, 3.7, 3.8)
+* Python 3 (3.7, 3.8)
 
 * Factory Boy version 2.11 or greater.
 
