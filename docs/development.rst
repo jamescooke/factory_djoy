@@ -210,8 +210,20 @@ Post release:
 * Check new docs are built on RTD.
 
 
-Helper recipes
---------------
+Contributing
+------------
+
+Please ensure that any provided code:
+
+* Has been developed with "test first" process.
+
+* Can be auto-merged in GitHub.
+
+* Passes `build on GitHub Actions <https://github.com/jamescooke/factory_djoy/actions>`_.
+
+
+Helper `Makefile` recipes
+-------------------------
 
 The root ``Makefile`` has a couple of helper recipes (note this is different to
 the ``Makefile`` in ``test_settings``):
