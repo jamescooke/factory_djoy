@@ -13,7 +13,7 @@ class TestUserFactoryRetries(TestCase):
     model = get_user_model()
 
     def setUp(self):
-        super(TestUserFactoryRetries, self).setUp()
+        super().setUp()
         patcher = patch('factory_djoy.factories.unique_username')
         self.m_unique_username = patcher.start()
         self.addCleanup(patcher.stop)
