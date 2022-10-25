@@ -32,12 +32,12 @@ class CleanModelFactory(DjangoModelFactory):
         try:
             obj.full_clean()
         except ValidationError as ve:
-            message = 'Error building {} with {}.\nBad values:\n'.format(model_class, cls.__name__)
+            message = f'Error building {model_class} with {cls.__name__}.\nBad values:\n'
             for field in ve.error_dict.keys():
                 if field == '__all__':
                     message += '  __all__: obj.clean() failed\n'
                 else:
-                    message += '  {}: "{}"\n'.format(field, getattr(obj, field))
+                    message += f'  {field}: "{getattr(obj, field)}"\n'
             raise RuntimeError(message) from ve
         obj.save()
         return obj
@@ -82,7 +82,7 @@ class UserFactory(DjangoModelFactory):
                 return username
             non_uniques.add(username)
         else:
-            non_uniques_str = ', '.join(['"{}"'.format(name) for name in non_uniques])
+            non_uniques_str = ', '.join([f'"{name}"' for name in non_uniques])
             message = (
                 'Unique username not found after 200 tries. Unique values tried: {}'
             ).format(non_uniques_str)
