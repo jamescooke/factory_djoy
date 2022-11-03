@@ -31,17 +31,11 @@ Activate the virtual environment and install requirements:
     . venv/bin/activate
     make install
 
-Run all tests using ``tox`` for all versions of Python and Django:
+Run all tests and linting using ``tox`` for all versions of Python and Django:
 
 .. code-block:: sh
 
     make test
-
-CI will also run linting before the main test run:
-
-.. code-block:: sh
-
-    make lint
 
 
 Testing with real Django projects
@@ -155,7 +149,7 @@ like ``1.2.3``.
 
 * In a Pull Request for the release:
 
-  * Update `CHANGELOG`_ with changes.
+  * Update `CHANGELOG`_ with changes. Update links in footer.
 
   * Set version number in ``factory_djoy/__about__.py``
 
@@ -167,7 +161,7 @@ like ``1.2.3``.
 
     .. code-block:: sh
 
-        make lint test
+        make test
 
   * Clean out any old distributions and make new ones:
 

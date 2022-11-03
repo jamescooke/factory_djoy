@@ -12,6 +12,12 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Added
+:::::
+
+* Explicit support for Pythons 3.9, 3.10 and 3.11 added. `#104
+  <https://github.com/jamescooke/factory_djoy/issues/104>`_
+
 Changed
 :::::::
 
