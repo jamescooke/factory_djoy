@@ -12,6 +12,12 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+Changed
+:::::::
+
+* Python code upgraded with ``pyupgrade`` to Python 3.7 and above. `#116
+  <https://github.com/jamescooke/factory_djoy/pull/116>`_
+
 2.2.1_ - 2022/10/22
 -------------------
 
