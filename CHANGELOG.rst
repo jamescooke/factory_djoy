@@ -12,6 +12,9 @@ Unreleased_
 See also `latest documentation
 <http://factory-djoy.readthedocs.io/en/latest/>`_.
 
+2.2.2_ - 2022/11/25
+-------------------
+
 Added
 :::::
 
@@ -23,6 +26,12 @@ Changed
 
 * Python code upgraded with ``pyupgrade`` to Python 3.7 and above. `#116
   <https://github.com/jamescooke/factory_djoy/pull/116>`_
+
+Fixed
+:::::
+
+* `Broken ReadTheDocs builds fixed
+  <https://github.com/jamescooke/factory_djoy/issues/118>`_.
 
 2.2.1_ - 2022/10/22
 -------------------
@@ -192,7 +201,8 @@ Added
 
 Stable testing release.
 
-.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.2.1...HEAD
+.. _Unreleased: https://github.com/jamescooke/factory_djoy/compare/v2.2.2...HEAD
+.. _2.2.2: https://github.com/jamescooke/factory_djoy/compare/v2.2.1...v2.2.2
 .. _2.2.1: https://github.com/jamescooke/factory_djoy/compare/v2.2.0...v2.2.1
 .. _2.2.0: https://github.com/jamescooke/factory_djoy/compare/v2.1.4...v2.2.0
 .. _2.1.4: https://github.com/jamescooke/factory_djoy/compare/v2.1.3...v2.1.4
