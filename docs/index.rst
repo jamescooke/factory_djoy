@@ -14,5 +14,4 @@ Contents
    userfactory
    cleanmodelfactory
    motivation
-   contribution
    development
