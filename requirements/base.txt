@@ -12,7 +12,7 @@ bleach==4.1.0
     # via readme-renderer
 build==0.8.0
     # via check-manifest
-certifi==2022.9.24
+certifi==2022.12.7
     # via requests
 cffi==1.15.1
     # via cryptography
@@ -48,20 +48,8 @@ idna==3.4
     # via requests
 importlib-metadata==4.8.3
     # via
-    #   build
-    #   click
-    #   flake8
     #   keyring
-    #   pep517
-    #   pluggy
-    #   stevedore
-    #   tox
     #   twine
-    #   virtualenv
-importlib-resources==5.4.0
-    # via
-    #   tqdm
-    #   virtualenv
 isort==5.10.1
     # via -r base.in
 jeepney==0.7.1
@@ -128,23 +116,14 @@ smmap==5.0.0
     # via gitdb
 stevedore==3.5.1
     # via bandit
-toml==0.10.2
-    # via tox
 tomli==1.2.3
-    # via
-    #   build
-    #   check-manifest
-    #   pep517
+    # via check-manifest
 tox==3.26.0
     # via -r base.in
 tqdm==4.64.1
     # via twine
 twine==3.8.0
     # via -r base.in
-typing-extensions==4.1.1
-    # via
-    #   gitpython
-    #   importlib-metadata
 urllib3==1.26.12
     # via
     #   requests
@@ -156,10 +135,7 @@ webencodings==0.5.1
 wheel==0.37.1
     # via pip-tools
 zipp==3.6.0
-    # via
-    #   importlib-metadata
-    #   importlib-resources
-    #   pep517
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
