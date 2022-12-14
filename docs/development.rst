@@ -37,6 +37,22 @@ Run all tests and linting using ``tox`` for all versions of Python and Django:
 
     make test
 
+Requirements
+------------
+
+Quick info on packages:
+
+* Only requirements for build are ``tox`` and ``tox-gh-actions``, these are
+  unpinned and installed in ``build.yml`` GitHub Action config.
+
+* For local development, there are base requirements in ``base.txt``. These are
+  built with Python 3.7.
+
+* For building documentation, there are docs requirements in ``docs.txt``.
+  These are used by Read The Docs and build with Python 3.10.
+
+Docs and base requirements are split because ``sphinx`` and ``flake8``
+currently conflict.
 
 Testing with real Django projects
 ---------------------------------
