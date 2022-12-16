@@ -1,5 +1,4 @@
-
-.. image:: https://img.shields.io/github/workflow/status/jamescooke/factory_djoy/Build
+.. image:: https://img.shields.io/github/actions/workflow/status/jamescooke/factory_djoy/build.yml?branch=master
     :alt: GitHub Workflow Status
     :target: https://github.com/jamescooke/factory_djoy/actions?query=branch%3Amaster
 
