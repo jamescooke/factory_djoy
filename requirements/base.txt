@@ -32,7 +32,7 @@ colorama==0.4.6
     # via tox
 commonmark==0.9.1
     # via rich
-cryptography==38.0.4
+cryptography==39.0.1
     # via secretstorage
 distlib==0.3.6
     # via virtualenv
@@ -56,16 +56,8 @@ idna==3.4
     # via requests
 importlib-metadata==5.1.0
     # via
-    #   build
-    #   click
-    #   flake8
     #   keyring
-    #   pep517
-    #   pluggy
-    #   stevedore
-    #   tox
     #   twine
-    #   virtualenv
 isort==5.10.1
     # via -r base.in
 jaraco-classes==3.2.3
@@ -137,23 +129,10 @@ smmap==5.0.0
     # via gitdb
 stevedore==3.5.2
     # via bandit
-tomli==2.0.1
-    # via
-    #   build
-    #   check-manifest
-    #   pep517
-    #   pyproject-api
-    #   tox
 tox==4.0.5
     # via -r base.in
 twine==4.0.2
     # via -r base.in
-typing-extensions==4.4.0
-    # via
-    #   gitpython
-    #   importlib-metadata
-    #   rich
-    #   tox
 urllib3==1.26.13
     # via
     #   requests
@@ -165,9 +144,7 @@ webencodings==0.5.1
 wheel==0.38.4
     # via pip-tools
 zipp==3.11.0
-    # via
-    #   importlib-metadata
-    #   pep517
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
